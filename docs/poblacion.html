@@ -70,11 +70,8 @@
 <li><a href="./">NYC311ServiceRequest</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
-<li class="chapter" data-level="2" data-path="introduccion.html"><a href="introduccion.html"><i class="fa fa-check"></i><b>2</b> Introducción</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="introduccion.html"><a href="introduccion.html#descripción-del-problema"><i class="fa fa-check"></i><b>2.1</b> Descripción del Problema</a></li>
-</ul></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="problema.html"><a href="problema.html"><i class="fa fa-check"></i><b>2</b> Descripción del Problema</a></li>
 <li class="chapter" data-level="3" data-path="objetivos.html"><a href="objetivos.html"><i class="fa fa-check"></i><b>3</b> Objetivos del producto de datos</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="objetivos.html"><a href="objetivos.html#objetivo-generales"><i class="fa fa-check"></i><b>3.1</b> Objetivo generales</a></li>
@@ -104,7 +101,19 @@
 <li class="chapter" data-level="8" data-path="solucion.html"><a href="solucion.html"><i class="fa fa-check"></i><b>8</b> Solución Propuesta: Producto Final</a></li>
 <li class="chapter" data-level="9" data-path="eda.html"><a href="eda.html"><i class="fa fa-check"></i><b>9</b> Exploratory Data Analysis (EDA)</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="eda.html"><a href="eda.html#hallazgos"><i class="fa fa-check"></i><b>9.1</b> Hallazgos</a></li>
+<li class="chapter" data-level="9.1" data-path="eda.html"><a href="eda.html#hallazgos"><i class="fa fa-check"></i><b>9.1</b> Hallazgos</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="eda.html"><a href="eda.html#estructura-inicial"><i class="fa fa-check"></i><b>9.1.1</b> Estructura Inicial</a></li>
+<li class="chapter" data-level="9.1.2" data-path="eda.html"><a href="eda.html#valores-nulos"><i class="fa fa-check"></i><b>9.1.2</b> Valores nulos</a></li>
+<li class="chapter" data-level="9.1.3" data-path="eda.html"><a href="eda.html#registros-con-mayúsculas-y-minúsculas"><i class="fa fa-check"></i><b>9.1.3</b> Registros con mayúsculas y minúsculas</a></li>
+<li class="chapter" data-level="9.1.4" data-path="eda.html"><a href="eda.html#valores-únicos"><i class="fa fa-check"></i><b>9.1.4</b> Valores únicos</a></li>
+<li class="chapter" data-level="9.1.5" data-path="eda.html"><a href="eda.html#quejas-según-su-estatus"><i class="fa fa-check"></i><b>9.1.5</b> Quejas según su estatus</a></li>
+<li class="chapter" data-level="9.1.6" data-path="eda.html"><a href="eda.html#quejas-según-municipio"><i class="fa fa-check"></i><b>9.1.6</b> Quejas según municipio</a></li>
+<li class="chapter" data-level="9.1.7" data-path="eda.html"><a href="eda.html#quejas-según-agencia"><i class="fa fa-check"></i><b>9.1.7</b> Quejas según agencia</a></li>
+<li class="chapter" data-level="9.1.8" data-path="eda.html"><a href="eda.html#quejas-según-tipo-de-quejas"><i class="fa fa-check"></i><b>9.1.8</b> Quejas según tipo de quejas</a></li>
+<li class="chapter" data-level="9.1.9" data-path="eda.html"><a href="eda.html#ruido-bigcup-nypd"><i class="fa fa-check"></i><b>9.1.9</b> Ruido <span class="math inline">\(\bigcup\)</span> NYPD</a></li>
+<li class="chapter" data-level="9.1.10" data-path="eda.html"><a href="eda.html#quejas-por-año"><i class="fa fa-check"></i><b>9.1.10</b> Quejas por año</a></li>
+</ul></li>
 <li class="chapter" data-level="9.2" data-path="eda.html"><a href="eda.html#clean-1"><i class="fa fa-check"></i><b>9.2</b> Clean</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="modelos.html"><a href="modelos.html"><i class="fa fa-check"></i><b>10</b> Modelos</a>
@@ -158,7 +167,7 @@
 <ul>
 <li>Agencias gubernamentales de la ciudad de NY que deseen tener una herramienta de predicción sobre el exceso de demanda de sus servicios.</li>
 </ul>
-<p><image width="50" height="50" src="https://github.com/dapivei/data-product-architecture-final-project/blob/master/images/warning_sign.png"> Implicaciones Éticas</p>
+<p><image width="50" height="50" src="./images/warning_sign.png"> Implicaciones Éticas</p>
 <ul>
 <li>Las predicciones pueden estar sesgadas hacia las zonas (distritos) con mayor número de <em>service requests</em>;</li>
 <li>La credibilidad de las agencias públicas puede ser afectada por predicciones erróneas de tiempos de respuestas a los <em>service request</em>;</li>
@@ -224,6 +233,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

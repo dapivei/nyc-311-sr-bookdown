@@ -10,7 +10,7 @@ El output de este análisis es el siguiente documento: [eda_nyc311.json](https:/
 
 Acá se presenta un breve resumen.
 
-#### Estructura Inicial
+### Estructura Inicial
 En el momento en que realizamos el EDA, la base datos tenía la siguiente estructura:
 
 ```
@@ -120,7 +120,7 @@ El municipio/condado con mayor número de quejas es *Brooklyn*, con cerca de 6.7
 
 ### Quejas según agencia
 
-Existe 31 distintos registros de tipos de agencia en la base de datos. Entre estos distintos tipos de agencias, las agencias con mayor número 
+Existe 31 distintos registros de tipos de agencia en la base de datos. Entre estos distintos tipos de agencias, las agencias con mayor número registros históricos son: New York City Department of Housing Preservation and Development (HDP) y New York City Police Department. Cada uno con 6.08 y 5.44 millones de quejas, respectivamente.
 
 <div align="center">
 
@@ -144,6 +144,11 @@ Sin realizar ninguna limpieza previa, es notorio que la mayoría de las quejas t
 
 ### Ruido $\bigcup$ NYPD
 
+Cuando filtramos Ruido por NYPD, observamos que hay seis distintas categorías de quejas de "ruido". Recordemos que, de acuerdo con unas cuántas gráficas anteriores, el tipo de queja más frecuente era el "ruido residencial".
+
+En etapas posteriores, se retomará esta observación para orientar nuestra predicción únicamente a las quejas de "ruido" que recibe el Departamento de la Policía de la Nueva York.
+
+
 <div align="center">
 
 
@@ -155,13 +160,39 @@ Sin realizar ninguna limpieza previa, es notorio que la mayoría de las quejas t
 
 ### Quejas por año
 
+
+Identificamos que para nuestros propósitos, las variables existentes en la base de datos de *NYC 311 Service Request* no son de mucha utilidad. La única que realmente nos interesa, luego de filtrar la base de datos por agencia y tipo de queja, son los conteos de registros de quejas y las fechas de creación de las quejas o solicitudes de servicio. 
+
+Considerando esta última variable, comenzamos a explorar más datos relacionados con las fechas de creación de las quejas. Comenzamos revisando el número de quejas históricas, según el año.
+
 <div align="center">
 
 <image width="250" height="270" src="./images/cases_year.png">
 
 </div>
 
-</div>
+
+
+
+En la etapa de preprocesamiento para comenzar con el modelado, crearemos más varibles  a partir de la fecha de creación de las solicitudes de servicios.
+
 
 ## Clean
 
+
+Para la limpieza de la base de datos, seguimos los siguientes pasos:
+
+1) Leemos los datos del S3, en formato parquet, empleando pyspark.
+
+2) Corregimos los valores nulos, es decir, los estandarizamos. Todos los 
+'N/A', 'nan', 'NaN', 'n/a', 'Na', '', se convierten en 'null'.
+
+3) Corregimos el tipo de las variables de fechasM las convertimos a formato tipo fecha y creamos otras cuatro variables con formato timestamp, a fin de no perder datos valiosos, como horarios de creación de las solicitudes de servicios.
+
+4) Cambiamos las variables string a lowercase
+
+5) Eliminamos registros repetidos
+
+6) Eliminamos registros que tengan únicamente valores nulos
+
+</div>

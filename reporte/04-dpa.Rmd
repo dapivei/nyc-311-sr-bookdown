@@ -4,7 +4,7 @@
 
 <div align="center">
 
-<image width="700" height="100" src="https://github.com/dapivei/data-product-architecture-final-project/blob/master/images/deployment.png">
+<image width="700" height="100" src="./images/deployment.png">
 
 </div>  
 
@@ -12,7 +12,7 @@
 
 <div align="center">
 
-<image width="700" height="100" src="https://github.com/dapivei/data-product-architecture-final-project/blob/master/images/desarrollo_produccion.png">
+<image width="700" height="100" src="./images/desarrollo_produccion.png">
 
 </div>  
 

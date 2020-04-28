@@ -102,7 +102,6 @@
 <li class="chapter" data-level="9" data-path="eda.html"><a href="eda.html"><i class="fa fa-check"></i><b>9</b> Exploratory Data Analysis (EDA)</a>
 <ul>
 <li class="chapter" data-level="9.1" data-path="eda.html"><a href="eda.html#hallazgos"><i class="fa fa-check"></i><b>9.1</b> Hallazgos</a></li>
-<li class="chapter" data-level="9.2" data-path="eda.html"><a href="eda.html#clean-1"><i class="fa fa-check"></i><b>9.2</b> Clean</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="modelos.html"><a href="modelos.html"><i class="fa fa-check"></i><b>10</b> Modelos</a>
 <ul>
@@ -158,8 +157,8 @@
 <p>Con el propósito de limpiar la base de datos <em>NYC 311 Service Request</em> e identificar las quejas más frecuentes y las agencias con mayor número de peticiones o quejas (que servirá como base para el modelado posterior), realizamos el siguiente análisis exploratorio con <em>pyspark</em> (medinate el uso de zeppelin).</p>
 <p>El output de este análisis es el siguiente documento: <a href="https://github.com/dapivei/data-product-architecture-final-project/blob/master/eda/eda_nyc311.json">eda_nyc311.json</a>; mismo que será publicado próximamente en <a href="https://www.zepl.com/">ZeppelinHub</a>.</p>
 <p>Acá se presenta un breve resumen.</p>
-<div id="estructura-inicial" class="section level4" number="9.1.0.1">
-<h4><span class="header-section-number">9.1.0.1</span> Estructura Inicial</h4>
+<div id="estructura-inicial" class="section level3" number="9.1.1">
+<h3><span class="header-section-number">9.1.1</span> Estructura Inicial</h3>
 <p>En el momento en que realizamos el EDA, la base datos tenía la siguiente estructura:</p>
 <pre><code>root
  |-- address_type: string (nullable = true)
@@ -211,15 +210,15 @@
 <li><p><em>Registros totales (quejas)</em>: <span class="math inline">\(22,601,839\)</span>.</p></li>
 </ul>
 </div>
-<div id="valores-nulos" class="section level3" number="9.1.1">
-<h3><span class="header-section-number">9.1.1</span> Valores nulos</h3>
+<div id="valores-nulos" class="section level3" number="9.1.2">
+<h3><span class="header-section-number">9.1.2</span> Valores nulos</h3>
 <ul>
 <li><p><em>Problemas:</em> Los valores nulos no estaban homogenizados; existían registros ‘N/A’, ‘nan’, ‘NaN’, ‘n/a’, ‘Na’, ‘.’</p></li>
 <li><p><em>Solución:</em> Homogeneizar esos valores a “nulls”.</p></li>
 <li><p><em>Observación:</em> Las variables con mayor porcentaje de valores nulos son aquellos de locación (zip-code, domicilio, calles colindante, entre otros) o tipo de instalación. Aún así, el porcentaje de registros con valores nulos es menor al uno por ciento.</p></li>
 </ul>
-<div id="tipo-de-variables" class="section level4" number="9.1.1.1">
-<h4><span class="header-section-number">9.1.1.1</span> Tipo de variables</h4>
+<div id="tipo-de-variables" class="section level4" number="9.1.2.1">
+<h4><span class="header-section-number">9.1.2.1</span> Tipo de variables</h4>
 <ul>
 <li><p><em>Problemas:</em> Variables con tipos distintos al que realmente son.</p></li>
 <li><p><em>Solución:</em> Cambio de variables a sus tipos correctos.</p></li>
@@ -228,64 +227,79 @@
 </ul>
 </div>
 </div>
-<div id="registros-con-mayúsculas-y-minúsculas" class="section level3" number="9.1.2">
-<h3><span class="header-section-number">9.1.2</span> Registros con mayúsculas y minúsculas</h3>
+<div id="registros-con-mayúsculas-y-minúsculas" class="section level3" number="9.1.3">
+<h3><span class="header-section-number">9.1.3</span> Registros con mayúsculas y minúsculas</h3>
 <ul>
 <li><em>Solución</em>: Cambiar todos los registros a minúsculas.</li>
 </ul>
 </div>
-<div id="valores-únicos" class="section level3" number="9.1.3">
-<h3><span class="header-section-number">9.1.3</span> Valores únicos</h3>
+<div id="valores-únicos" class="section level3" number="9.1.4">
+<h3><span class="header-section-number">9.1.4</span> Valores únicos</h3>
 <p>La mayoría de las variables son variables de tipo categórico. Aún así, conforme con la tabla que se muestra a continucaión, cada variable tiepo múltiples categorías.</p>
 <div align="center">
 <p><image width="250" height="270" src="./images/unique_values.png"></p>
 </div>
 </div>
-<div id="quejas-según-su-estatus" class="section level3" number="9.1.4">
-<h3><span class="header-section-number">9.1.4</span> Quejas según su estatus</h3>
+<div id="quejas-según-su-estatus" class="section level3" number="9.1.5">
+<h3><span class="header-section-number">9.1.5</span> Quejas según su estatus</h3>
 <p>Las quejas son clasificadas en 12 categorías; <span class="math inline">\(95\)</span> por ciento de las quejas se encuentran con estatus <em>cerrado</em>.</p>
 <div align="center">
 <p><image width="600" height="200" src="./images/cases_status.png"></p>
 </div>
 </div>
-<div id="quejas-según-municipio" class="section level3" number="9.1.5">
-<h3><span class="header-section-number">9.1.5</span> Quejas según municipio</h3>
+<div id="quejas-según-municipio" class="section level3" number="9.1.6">
+<h3><span class="header-section-number">9.1.6</span> Quejas según municipio</h3>
 <p>El municipio/condado con mayor número de quejas es <em>Brooklyn</em>, con cerca de 6.72 millones de quejas en total (desde el 2010); le siguen, Queens, Manhattan, Bronx y Staten Island.</p>
 <div align="center">
 <p><image width="600" height="200" src="./images/cases_borough.png"></p>
 </div>
 </div>
-<div id="quejas-según-agencia" class="section level3" number="9.1.6">
-<h3><span class="header-section-number">9.1.6</span> Quejas según agencia</h3>
-<p>Existe 31 distintos registros de tipos de agencia en la base de datos. Entre estos distintos tipos de agencias, las agencias con mayor número</p>
+<div id="quejas-según-agencia" class="section level3" number="9.1.7">
+<h3><span class="header-section-number">9.1.7</span> Quejas según agencia</h3>
+<p>Existe 31 distintos registros de tipos de agencia en la base de datos. Entre estos distintos tipos de agencias, las agencias con mayor número registros históricos son: New York City Department of Housing Preservation and Development (HDP) y New York City Police Department. Cada uno con 6.08 y 5.44 millones de quejas, respectivamente.</p>
 <div align="center">
 <p><image width="600" height="200" src="./images/cases_agency.png"></p>
 </div>
 </div>
-<div id="quejas-según-tipo-de-quejas" class="section level3" number="9.1.7">
-<h3><span class="header-section-number">9.1.7</span> Quejas según tipo de quejas</h3>
+<div id="quejas-según-tipo-de-quejas" class="section level3" number="9.1.8">
+<h3><span class="header-section-number">9.1.8</span> Quejas según tipo de quejas</h3>
 <p>Como se vio anteriormente, los tipos de quejas se clasifican en 428 tipos, previo a realizar cualquier tipo de limipieza.</p>
 <p>Sin realizar ninguna limpieza previa, es notorio que la mayoría de las quejas tienen que ver con temas de ruido residencial; para ser precisos, históricamente, cerca del 8 por ciento (1.86 milllones) de las quejas han sido relativas a este asunto.</p>
 <div align="center">
 <p><image width="600" height="200" src="./images/cases_complaint.png"></p>
 </div>
 </div>
-<div id="ruido-bigcup-nypd" class="section level3" number="9.1.8">
-<h3><span class="header-section-number">9.1.8</span> Ruido <span class="math inline">\(\bigcup\)</span> NYPD</h3>
+<div id="ruido-bigcup-nypd" class="section level3" number="9.1.9">
+<h3><span class="header-section-number">9.1.9</span> Ruido <span class="math inline">\(\bigcup\)</span> NYPD</h3>
+<p>Cuando filtramos Ruido por NYPD, observamos que hay seis distintas categorías de quejas de “ruido”. Recordemos que, de acuerdo con unas cuántas gráficas anteriores, el tipo de queja más frecuente era el “ruido residencial”.</p>
+<p>En etapas posteriores, se retomará esta observación para orientar nuestra predicción únicamente a las quejas de “ruido” que recibe el Departamento de la Policía de la Nueva York.</p>
 <div align="center">
 <p><image width="600" height="200" src="./images/noise_nypd.png"></p>
 </div>
 </div>
-<div id="quejas-por-año" class="section level3" number="9.1.9">
-<h3><span class="header-section-number">9.1.9</span> Quejas por año</h3>
+<div id="quejas-por-año" class="section level3" number="9.1.10">
+<h3><span class="header-section-number">9.1.10</span> Quejas por año</h3>
+<p>Identificamos que para nuestros propósitos, las variables existentes en la base de datos de <em>NYC 311 Service Request</em> no son de mucha utilidad. La única que realmente nos interesa, luego de filtrar la base de datos por agencia y tipo de queja, son los conteos de registros de quejas y las fechas de creación de las quejas o solicitudes de servicio.</p>
+<p>Considerando esta última variable, comenzamos a explorar más datos relacionados con las fechas de creación de las quejas. Comenzamos revisando el número de quejas históricas, según el año.</p>
 <div align="center">
 <p><image width="250" height="270" src="./images/cases_year.png"></p>
 </div>
-</div>
-</div>
+<p>En la etapa de preprocesamiento para comenzar con el modelado, crearemos más varibles a partir de la fecha de creación de las solicitudes de servicios.</p>
 </div>
 <div id="clean-1" class="section level2" number="9.2">
 <h2><span class="header-section-number">9.2</span> Clean</h2>
+<p>Para la limpieza de la base de datos, seguimos los siguientes pasos:</p>
+<ol style="list-style-type: decimal">
+<li><p>Leemos los datos del S3, en formato parquet, empleando pyspark.</p></li>
+<li><p>Corregimos los valores nulos, es decir, los estandarizamos. Todos los
+‘N/A’, ‘nan’, ‘NaN’, ‘n/a’, ‘Na’, ’‘, se convierten en ’null’.</p></li>
+<li><p>Corregimos el tipo de las variables de fechasM las convertimos a formato tipo fecha y creamos otras cuatro variables con formato timestamp, a fin de no perder datos valiosos, como horarios de creación de las solicitudes de servicios.</p></li>
+<li><p>Cambiamos las variables string a lowercase</p></li>
+<li><p>Eliminamos registros repetidos</p></li>
+<li><p>Eliminamos registros que tengan únicamente valores nulos</p></li>
+</ol>
+</div>
+</div>
 
 </div>
 </div>

@@ -1,3 +1,3 @@
 [
-["index.html", "NYC 311 Service Request Capítulo 1 Prerequisites", " NYC 311 Service Request Cadavid-Sánchez Sebastián, Herrera Musi Juan Pablo, Paz Cendejas Francisco, Villa Lizárraga Diego M. &amp; Pinto Veizaga Daniela 2020-04-28 Capítulo 1 Prerequisites The bookdown package can be installed from CRAN or Github: install.packages(&quot;bookdown&quot;) # or the development version # devtools::install_github(&quot;rstudio/bookdown&quot;) "]
+["solucion.html", "Capítulo 8 Solución Propuesta: Producto Final", " Capítulo 8 Solución Propuesta: Producto Final Gráfica 5.Portal-Web “NYC311 Service Request Engagement” El producto de datos va a ser un dashboard que genere predicciones diarias de los service request recibidos una vez se realice la ingesta de datos. El dashboard va a permitir filtrar las predicciones por fecha de creación, días para completar, distrito, agencia, tipo de service request. "]
 ]

@@ -70,11 +70,8 @@
 <li><a href="./">NYC311ServiceRequest</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
-<li class="chapter" data-level="2" data-path="introduccion.html"><a href="introduccion.html"><i class="fa fa-check"></i><b>2</b> Introducción</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="introduccion.html"><a href="introduccion.html#descripción-del-problema"><i class="fa fa-check"></i><b>2.1</b> Descripción del Problema</a></li>
-</ul></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="problema.html"><a href="problema.html"><i class="fa fa-check"></i><b>2</b> Descripción del Problema</a></li>
 <li class="chapter" data-level="3" data-path="objetivos.html"><a href="objetivos.html"><i class="fa fa-check"></i><b>3</b> Objetivos del producto de datos</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="objetivos.html"><a href="objetivos.html#objetivo-generales"><i class="fa fa-check"></i><b>3.1</b> Objetivo generales</a></li>
@@ -104,14 +101,24 @@
 <li class="chapter" data-level="8" data-path="solucion.html"><a href="solucion.html"><i class="fa fa-check"></i><b>8</b> Solución Propuesta: Producto Final</a></li>
 <li class="chapter" data-level="9" data-path="eda.html"><a href="eda.html"><i class="fa fa-check"></i><b>9</b> Exploratory Data Analysis (EDA)</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="eda.html"><a href="eda.html#hallazgos"><i class="fa fa-check"></i><b>9.1</b> Hallazgos</a></li>
+<li class="chapter" data-level="9.1" data-path="eda.html"><a href="eda.html#hallazgos"><i class="fa fa-check"></i><b>9.1</b> Hallazgos</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="eda.html"><a href="eda.html#estructura-inicial"><i class="fa fa-check"></i><b>9.1.1</b> Estructura Inicial</a></li>
+<li class="chapter" data-level="9.1.2" data-path="eda.html"><a href="eda.html#valores-nulos"><i class="fa fa-check"></i><b>9.1.2</b> Valores nulos</a></li>
+<li class="chapter" data-level="9.1.3" data-path="eda.html"><a href="eda.html#registros-con-mayúsculas-y-minúsculas"><i class="fa fa-check"></i><b>9.1.3</b> Registros con mayúsculas y minúsculas</a></li>
+<li class="chapter" data-level="9.1.4" data-path="eda.html"><a href="eda.html#valores-únicos"><i class="fa fa-check"></i><b>9.1.4</b> Valores únicos</a></li>
+<li class="chapter" data-level="9.1.5" data-path="eda.html"><a href="eda.html#quejas-según-su-estatus"><i class="fa fa-check"></i><b>9.1.5</b> Quejas según su estatus</a></li>
+<li class="chapter" data-level="9.1.6" data-path="eda.html"><a href="eda.html#quejas-según-municipio"><i class="fa fa-check"></i><b>9.1.6</b> Quejas según municipio</a></li>
+<li class="chapter" data-level="9.1.7" data-path="eda.html"><a href="eda.html#quejas-según-agencia"><i class="fa fa-check"></i><b>9.1.7</b> Quejas según agencia</a></li>
+<li class="chapter" data-level="9.1.8" data-path="eda.html"><a href="eda.html#quejas-según-tipo-de-quejas"><i class="fa fa-check"></i><b>9.1.8</b> Quejas según tipo de quejas</a></li>
+<li class="chapter" data-level="9.1.9" data-path="eda.html"><a href="eda.html#ruido-bigcup-nypd"><i class="fa fa-check"></i><b>9.1.9</b> Ruido <span class="math inline">\(\bigcup\)</span> NYPD</a></li>
+<li class="chapter" data-level="9.1.10" data-path="eda.html"><a href="eda.html#quejas-por-año"><i class="fa fa-check"></i><b>9.1.10</b> Quejas por año</a></li>
+</ul></li>
 <li class="chapter" data-level="9.2" data-path="eda.html"><a href="eda.html#clean-1"><i class="fa fa-check"></i><b>9.2</b> Clean</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="modelos.html"><a href="modelos.html"><i class="fa fa-check"></i><b>10</b> Modelos</a>
 <ul>
 <li class="chapter" data-level="10.1" data-path="modelos.html"><a href="modelos.html#feature-engineering"><i class="fa fa-check"></i><b>10.1</b> Feature engineering</a></li>
-<li class="chapter" data-level="10.2" data-path="modelos.html"><a href="modelos.html#tuneo-de-hiperparámetros"><i class="fa fa-check"></i><b>10.2</b> Tuneo de hiperparámetros</a></li>
-<li class="chapter" data-level="10.3" data-path="modelos.html"><a href="modelos.html#selección-de-modelos"><i class="fa fa-check"></i><b>10.3</b> Selección de Modelos</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="continuos-integration.html"><a href="continuos-integration.html"><i class="fa fa-check"></i><b>11</b> Continuous integration CI</a>
 <ul>
@@ -157,12 +164,96 @@
 <h1><span class="header-section-number">Capítulo 10</span> Modelos</h1>
 <div id="feature-engineering" class="section level2" number="10.1">
 <h2><span class="header-section-number">10.1</span> Feature engineering</h2>
-</div>
+<div align="justify">
+<p>A partir de la variable <em>created_date (día-mes-año en que se levantó la queja)</em> se crearon las siguientes variables que serán empleadas en el modelado.</p>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>complain_type</td>
+<td>tipo de queja = noise</td>
+</tr>
+<tr class="even">
+<td>number_cases</td>
+<td>número de casos registrados en el día</td>
+</tr>
+<tr class="odd">
+<td>mean_month</td>
+<td>promedio de casos registrados en un mes (histórico)</td>
+</tr>
+<tr class="even">
+<td><strong>number_cases &gt; mean_month</strong></td>
+<td>variable indicadora – día con número de quejas superiores al promedio del mes</td>
+</tr>
+<tr class="odd">
+<td>created_date_day</td>
+<td>día del mes en que se levantó la queja (1-31) – one hot encoding</td>
+</tr>
+<tr class="even">
+<td>created_date_month</td>
+<td>indicador del mes de registro de la queja (1-12) – one hot encoding</td>
+</tr>
+<tr class="odd">
+<td>created_date_dow</td>
+<td>día de la semana en que se levantó la queja (1-7) – one hot encoder</td>
+</tr>
+<tr class="even">
+<td>created_date_year</td>
+<td>año de registro de la queja – one hot encoding</td>
+</tr>
+<tr class="odd">
+<td>created_date_woy</td>
+<td>número de semana del año en que fue registrada la queja (1-52) – one hot encoding</td>
+</tr>
+<tr class="even">
+<td>date_holiday</td>
+<td>indicador binario si el día en que se registro la queja fue un feriado o no</td>
+</tr>
+<tr class="odd">
+<td>number_cases_1day_ago</td>
+<td>número de casos registrados 1 día antes</td>
+</tr>
+<tr class="even">
+<td>number_cases_2days_ago</td>
+<td>número de casos registrados dos días antes</td>
+</tr>
+<tr class="odd">
+<td>number_cases_3days_ago</td>
+<td>número de casos registrados tres días antes</td>
+</tr>
+<tr class="even">
+<td>number_cases_4days_ago</td>
+<td>número de casos registrados cuatro días antes</td>
+</tr>
+<tr class="odd">
+<td>number_cases_5days_ago</td>
+<td>número de casos registrados cinco días antes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Propuestas a futuro:</strong>
++ Aumentar las variables cambiando el número de días anteriores: {1,2,3,4,5,6,7,,8,9,10,…}
++ Segmentar por zonas geográficas. La siguiente <a href="https://www.census.gov/en.html" title="censo usa">liga</a> contiene información por explorar:
++ Buscar información de número de pobladores por zona
++ Información del tipo de residencias existentes (número de casas/departamentos/edificios)
++ Ingreso promedio por zona
++ Etnias</p>
 <div id="tuneo-de-hiperparámetros" class="section level2" number="10.2">
 <h2><span class="header-section-number">10.2</span> Tuneo de hiperparámetros</h2>
 </div>
 <div id="selección-de-modelos" class="section level2" number="10.3">
 <h2><span class="header-section-number">10.3</span> Selección de Modelos</h2>
+</div>
+</div>
 
 </div>
 </div>
@@ -222,6 +313,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

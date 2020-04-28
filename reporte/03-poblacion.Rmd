@@ -4,7 +4,7 @@
 
 
 
-<image width="50" height="50" src="https://github.com/dapivei/data-product-architecture-final-project/blob/master/images/warning_sign.png"> Implicaciones Éticas
+<image width="50" height="50" src="./images/warning_sign.png"> Implicaciones Éticas
 
 
 - Las predicciones pueden estar sesgadas hacia las zonas (distritos) con mayor número de *service requests*;
