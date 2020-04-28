@@ -32,7 +32,7 @@
   
   
 
-<link rel="next" href="introduccion.html"/>
+<link rel="next" href="problema.html"/>
 <script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -53,69 +53,6 @@
 
 
 
-<style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -133,11 +70,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">NYC311ServiceRequest</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
-<li class="chapter" data-level="2" data-path="introduccion.html"><a href="introduccion.html"><i class="fa fa-check"></i><b>2</b> Introducción</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="introduccion.html"><a href="introduccion.html#descripción-del-problema"><i class="fa fa-check"></i><b>2.1</b> Descripción del Problema</a></li>
-</ul></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="problema.html"><a href="problema.html"><i class="fa fa-check"></i><b>2</b> Descripción del Problema</a></li>
 <li class="chapter" data-level="3" data-path="objetivos.html"><a href="objetivos.html"><i class="fa fa-check"></i><b>3</b> Objetivos del producto de datos</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="objetivos.html"><a href="objetivos.html#objetivo-generales"><i class="fa fa-check"></i><b>3.1</b> Objetivo generales</a></li>
@@ -221,12 +155,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p class="author"><em>Cadavid-Sánchez Sebastián, Herrera Musi Juan Pablo, Paz Cendejas Francisco, Villa Lizárraga Diego M. &amp; Pinto Veizaga Daniela</em></p>
 <p class="date"><em>2020-04-28</em></p>
 </div>
-<div id="prerequisites" class="section level1" number="1">
-<h1><span class="header-section-number">Capítulo 1</span> Prerequisites</h1>
-<p>The <strong>bookdown</strong> package can be installed from CRAN or Github:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;bookdown&quot;</span>)</span>
-<span id="cb1-2"><a href="index.html#cb1-2"></a><span class="co"># or the development version</span></span>
-<span id="cb1-3"><a href="index.html#cb1-3"></a><span class="co"># devtools::install_github(&quot;rstudio/bookdown&quot;)</span></span></code></pre></div>
+<div id="introducción" class="section level1" number="1">
+<h1><span class="header-section-number">Capítulo 1</span> Introducción</h1>
+<p>El gobierno de Nueva York, con el fin de proveer a la comunidad <em>newyorkina</em> con acceso directo a los servicios gubernamentales y mejorar el seguimiento y control de los servicios gubernamentales, implementó el servicio de petición <em>NYC311</em>, disponible las 24 horas del día, los 7 días de la semana, los 365 días del año. De esta manera, según el portal web principal de <a href="https://portal.311.nyc.gov/about-nyc-311/"><em>NYC311</em></a>, la misión del servicio de petición es:</p>
+<blockquote>
+<ul>
+<li>“es proporcionar al público un acceso rápido y fácil a todos los servicios e información del gobierno de la ciudad de Nueva York al tiempo que ofrece el mejor servicio al cliente. Ayudamos a las agencias a mejorar la prestación de servicios permitiéndoles centrarse en sus misiones principales y administrar su carga de trabajo de manera eficiente. También proporcionamos información para mejorar el gobierno de la Ciudad a través de mediciones y análisis precisos y consistentes de la prestación de servicios”.</li>
+</ul>
+</blockquote>
+<p><strong>Gráfica 1.Portal-Web "NYC311 Service Request</strong></p>
+<div align="center">
+<p><image width="300" height="330" src="./images/nyc_311_sr_website.png"></p>
+</div>
 
 </div>
             </section>
@@ -235,7 +175,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 
-<a href="introduccion.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="problema.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
