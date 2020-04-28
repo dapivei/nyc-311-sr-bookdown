@@ -4,5 +4,5 @@ language:
     chapter_name: "Capítulo "
 delete_merged_file: true
 
-repo: https://github.com/C1587S/EMV-ejercicios
+repo: https://github.com/dapivei/prueba
 output_dir: "docs"
