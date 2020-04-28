@@ -1,0 +1,6 @@
+# Exploratory Data Analysis (EDA) {#eda}
+
+## Hallazgos
+
+## Clean
+

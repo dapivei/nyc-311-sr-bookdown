@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Objetivos del producto de datos | NYC 311 Service Request</title>
+  <meta name="description" content="Descripción de la implementación de un producto de datos: predicciones sobre el flujo de quejas diarias (por encima), del flujo promedio de quejas." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Objetivos del producto de datos | NYC 311 Service Request" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Descripción de la implementación de un producto de datos: predicciones sobre el flujo de quejas diarias (por encima), del flujo promedio de quejas." />
+  <meta name="github-repo" content="https://github.com/dapivei/data-product-architecture-final-project" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Objetivos del producto de datos | NYC 311 Service Request" />
+  
+  <meta name="twitter:description" content="Descripción de la implementación de un producto de datos: predicciones sobre el flujo de quejas diarias (por encima), del flujo promedio de quejas." />
+  
+
+<meta name="author" content="Cadavid-Sánchez Sebastián, Herrera Musi Juan Pablo, Paz Cendejas Francisco, Villa Lizárraga Diego M. &amp; Pinto Veizaga Daniela" />
+
+
+<meta name="date" content="2020-04-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="problema.html"/>
+<link rel="next" href="poblacion.html"/>
+<script src="libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Multivariate and Categorical Statistics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="problema.html"><a href="problema.html"><i class="fa fa-check"></i><b>2</b> Descripción del Problema</a></li>
+<li class="chapter" data-level="3" data-path="objetivos.html"><a href="objetivos.html"><i class="fa fa-check"></i><b>3</b> Objetivos del producto de datos</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="objetivos.html"><a href="objetivos.html#objetivo-generales"><i class="fa fa-check"></i><b>3.1</b> Objetivo generales</a></li>
+<li class="chapter" data-level="3.2" data-path="objetivos.html"><a href="objetivos.html#objetivos-específicos"><i class="fa fa-check"></i><b>3.2</b> Objetivos específicos</a></li>
+<li class="chapter" data-level="3.3" data-path="objetivos.html"><a href="objetivos.html#predicción"><i class="fa fa-check"></i><b>3.3</b> Predicción</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="poblacion.html"><a href="poblacion.html"><i class="fa fa-check"></i><b>4</b> Población objetivo</a></li>
+<li class="chapter" data-level="5" data-path="chapter6.html"><a href="chapter6.html"><i class="fa fa-check"></i><b>5</b> Multivariate Analysis of Variance Vectors</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="chapter6.html"><a href="chapter6.html#one-way-models"><i class="fa fa-check"></i><b>5.1</b> One Way Models</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="chapter6.html"><a href="chapter6.html#example-6.1.7"><i class="fa fa-check"></i><b>5.1.1</b> Example 6.1.7</a></li>
+<li class="chapter" data-level="5.1.2" data-path="chapter6.html"><a href="chapter6.html#example-6.1.8"><i class="fa fa-check"></i><b>5.1.2</b> Example 6.1.8</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="chapter6.html"><a href="chapter6.html#comparison-of-the-four-manova-test-statistics-comparison-ot-the-four-manova-test-statistics"><i class="fa fa-check"></i><b>5.2</b> Comparison of the four MANOVA test statistics comparison ot the four MANOVA test statistics</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="chapter6.html"><a href="chapter6.html#example-6.2"><i class="fa fa-check"></i><b>5.2.1</b> Example 6.2</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="chapter6.html"><a href="chapter6.html#constrasts"><i class="fa fa-check"></i><b>5.3</b> Constrasts</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="chapter6.html"><a href="chapter6.html#example-6.3.2"><i class="fa fa-check"></i><b>5.3.1</b> Example 6.3.2</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="chapter6.html"><a href="chapter6.html#tests-on-individual-variables-following-rejection-of-h_0-by-the-overall-manova-test"><i class="fa fa-check"></i><b>5.4</b> Tests on individual variables following rejection of <span class="math inline">\(H_0\)</span> by the overall MANOVA test</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="chapter6.html"><a href="chapter6.html#example-6.4"><i class="fa fa-check"></i><b>5.4.1</b> Example 6.4</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="chapter6.html"><a href="chapter6.html#two-way-classification"><i class="fa fa-check"></i><b>5.5</b> Two-way Classification</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="chapter6.html"><a href="chapter6.html#example-6.5.2"><i class="fa fa-check"></i><b>5.5.1</b> Example 6.5.2</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="chapter6.html"><a href="chapter6.html#other-models"><i class="fa fa-check"></i><b>5.6</b> Other Models</a></li>
+<li class="chapter" data-level="5.7" data-path="chapter6.html"><a href="chapter6.html#checking-on-assumptions"><i class="fa fa-check"></i><b>5.7</b> Checking on Assumptions</a></li>
+<li class="chapter" data-level="5.8" data-path="chapter6.html"><a href="chapter6.html#profile-analysis"><i class="fa fa-check"></i><b>5.8</b> Profile Analysis</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="chapter6.html"><a href="chapter6.html#example-6.8"><i class="fa fa-check"></i><b>5.8.1</b> Example 6.8</a></li>
+<li class="chapter" data-level="5.8.2" data-path="chapter6.html"><a href="chapter6.html#example-6.9.2"><i class="fa fa-check"></i><b>5.8.2</b> Example 6.9.2</a></li>
+<li class="chapter" data-level="5.8.3" data-path="chapter6.html"><a href="chapter6.html#example-6.9.5"><i class="fa fa-check"></i><b>5.8.3</b> Example 6.9.5</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="chapter6.html"><a href="chapter6.html#growth-curves"><i class="fa fa-check"></i><b>5.9</b> Growth Curves</a>
+<ul>
+<li class="chapter" data-level="5.9.1" data-path="chapter6.html"><a href="chapter6.html#example-6.10.1"><i class="fa fa-check"></i><b>5.9.1</b> Example 6.10.1</a></li>
+<li class="chapter" data-level="5.9.2" data-path="chapter6.html"><a href="chapter6.html#example-6.10.2"><i class="fa fa-check"></i><b>5.9.2</b> Example 6.10.2</a></li>
+</ul></li>
+<li class="chapter" data-level="5.10" data-path="chapter6.html"><a href="chapter6.html#tests-on-a-subvector"><i class="fa fa-check"></i><b>5.10</b> Tests on a Subvector</a>
+<ul>
+<li class="chapter" data-level="5.10.1" data-path="chapter6.html"><a href="chapter6.html#example-6.11.1"><i class="fa fa-check"></i><b>5.10.1</b> Example 6.11.1</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="chapter5.html"><a href="chapter5.html"><i class="fa fa-check"></i><b>6</b> Test on one or two mean vectors</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="chapter5.html"><a href="chapter5.html#multivariate-test-for-h_0mumu_0-with-sigma-known"><i class="fa fa-check"></i><b>6.1</b> Multivariate Test for <span class="math inline">\(H_{0}:\mu=\mu_{0}\)</span> with <span class="math inline">\(\Sigma\)</span> known</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="chapter5.html"><a href="chapter5.html#example-5.2.2"><i class="fa fa-check"></i><b>6.1.1</b> Example 5.2.2</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="chapter5.html"><a href="chapter5.html#multivariate-test-for-h_0mumu_0-with-sigma-known-1"><i class="fa fa-check"></i><b>6.2</b> Multivariate Test for <span class="math inline">\(H_{0}:\mu=\mu_{0}\)</span> with <span class="math inline">\(\Sigma\)</span> known</a></li>
+<li class="chapter" data-level="6.3" data-path="chapter5.html"><a href="chapter5.html#multivariate-two-sample-t2-test"><i class="fa fa-check"></i><b>6.3</b> Multivariate Two-Sample <span class="math inline">\(T^2\)</span>-test</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="chapter5.html"><a href="chapter5.html#example-5.4.2"><i class="fa fa-check"></i><b>6.3.1</b> Example 5.4.2</a></li>
+<li class="chapter" data-level="6.3.2" data-path="chapter5.html"><a href="chapter5.html#example-5.5"><i class="fa fa-check"></i><b>6.3.2</b> Example 5.5</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="chapter5.html"><a href="chapter5.html#computation-of-t2"><i class="fa fa-check"></i><b>6.4</b> Computation of <span class="math inline">\(T^2\)</span></a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="chapter5.html"><a href="chapter5.html#example-5.6.2"><i class="fa fa-check"></i><b>6.4.1</b> Example: 5.6.2</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="chapter5.html"><a href="chapter5.html#paired-observation-test"><i class="fa fa-check"></i><b>6.5</b> Paired Observation Test</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="chapter5.html"><a href="chapter5.html#example-5.7.2"><i class="fa fa-check"></i><b>6.5.1</b> Example 5.7.2</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="chapter5.html"><a href="chapter5.html#test-for-aditional-information"><i class="fa fa-check"></i><b>6.6</b> Test for Aditional Information</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="chapter5.html"><a href="chapter5.html#example-5.8"><i class="fa fa-check"></i><b>6.6.1</b> Example 5.8</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="chapter5.html"><a href="chapter5.html#profile-analysis-1"><i class="fa fa-check"></i><b>6.7</b> Profile Analysis</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="chapter5.html"><a href="chapter5.html#example-5.9.2"><i class="fa fa-check"></i><b>6.7.1</b> Example 5.9.2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="chapter7.html"><a href="chapter7.html"><i class="fa fa-check"></i><b>7</b> Tests in covariance matrices</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="chapter7.html"><a href="chapter7.html#introduction"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
+<li class="chapter" data-level="7.2" data-path="chapter7.html"><a href="chapter7.html#testing-a-specified-pattern-for-sigma"><i class="fa fa-check"></i><b>7.2</b> Testing a specified pattern for <span class="math inline">\(\Sigma\)</span></a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="chapter7.html"><a href="chapter7.html#example-7.2.2"><i class="fa fa-check"></i><b>7.2.1</b> Example 7.2.2</a></li>
+<li class="chapter" data-level="7.2.2" data-path="chapter7.html"><a href="chapter7.html#example-7.2.3"><i class="fa fa-check"></i><b>7.2.2</b> Example 7.2.3</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="chapter7.html"><a href="chapter7.html#tests-comparing-covariance-matrices"><i class="fa fa-check"></i><b>7.3</b> Tests comparing covariance matrices</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="chapter7.html"><a href="chapter7.html#example-7.3.2"><i class="fa fa-check"></i><b>7.3.1</b> Example 7.3.2</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="chapter7.html"><a href="chapter7.html#tests-of-independence"><i class="fa fa-check"></i><b>7.4</b> Tests of independence</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="chapter7.html"><a href="chapter7.html#example-7.4.1"><i class="fa fa-check"></i><b>7.4.1</b> Example 7.4.1</a></li>
+<li class="chapter" data-level="7.4.2" data-path="chapter7.html"><a href="chapter7.html#example-7.4.2"><i class="fa fa-check"></i><b>7.4.2</b> Example 7.4.2</a></li>
+<li class="chapter" data-level="7.4.3" data-path="chapter7.html"><a href="chapter7.html#example-7.4.3"><i class="fa fa-check"></i><b>7.4.3</b> Example 7.4.3</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="chapter8.html"><a href="chapter8.html"><i class="fa fa-check"></i><b>8</b> Discriminant Analysis: description of group separation</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="chapter8.html"><a href="chapter8.html#introduction-1"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
+<li class="chapter" data-level="8.2" data-path="chapter8.html"><a href="chapter8.html#discriminant-function-for-two-vectors"><i class="fa fa-check"></i><b>8.2</b> Discriminant Function for Two Vectors</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="chapter8.html"><a href="chapter8.html#example-8.2"><i class="fa fa-check"></i><b>8.2.1</b> Example 8.2</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="chapter8.html"><a href="chapter8.html#relantionship-between-two-group-discriminant-analysis-and-multiple-regression"><i class="fa fa-check"></i><b>8.3</b> Relantionship Between Two Group Discriminant Analysis and Multiple Regression</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="chapter8.html"><a href="chapter8.html#example-8.3."><i class="fa fa-check"></i><b>8.3.1</b> Example 8.3.</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="chapter8.html"><a href="chapter8.html#discriminant-analysis-for-several-groups"><i class="fa fa-check"></i><b>8.4</b> Discriminant Analysis For Several Groups</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="chapter8.html"><a href="chapter8.html#example-8.4.1."><i class="fa fa-check"></i><b>8.4.1</b> Example 8.4.1.</a></li>
+<li class="chapter" data-level="8.4.2" data-path="chapter8.html"><a href="chapter8.html#example-8.4.2."><i class="fa fa-check"></i><b>8.4.2</b> Example 8.4.2.</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="chapter8.html"><a href="chapter8.html#standarized-discriminant-functions"><i class="fa fa-check"></i><b>8.5</b> Standarized Discriminant Functions</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="chapter8.html"><a href="chapter8.html#example-8.5."><i class="fa fa-check"></i><b>8.5.1</b> Example 8.5.</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="chapter8.html"><a href="chapter8.html#test-of-significance"><i class="fa fa-check"></i><b>8.6</b> Test of Significance</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="chapter8.html"><a href="chapter8.html#example-8.6.2"><i class="fa fa-check"></i><b>8.6.1</b> Example 8.6.2</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="chapter8.html"><a href="chapter8.html#interpretation-of-discriminant-functions"><i class="fa fa-check"></i><b>8.7</b> Interpretation of Discriminant Functions</a></li>
+<li class="chapter" data-level="8.8" data-path="chapter8.html"><a href="chapter8.html#scatter-plots"><i class="fa fa-check"></i><b>8.8</b> Scatter Plots</a>
+<ul>
+<li class="chapter" data-level="8.8.1" data-path="chapter8.html"><a href="chapter8.html#example-8.8."><i class="fa fa-check"></i><b>8.8.1</b> Example 8.8.</a></li>
+</ul></li>
+<li class="chapter" data-level="8.9" data-path="chapter8.html"><a href="chapter8.html#stepwise-selection-of-variables"><i class="fa fa-check"></i><b>8.9</b> Stepwise Selection of Variables</a>
+<ul>
+<li class="chapter" data-level="8.9.1" data-path="chapter8.html"><a href="chapter8.html#example-8.9."><i class="fa fa-check"></i><b>8.9.1</b> Example 8.9.</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="chapter9.html"><a href="chapter9.html"><i class="fa fa-check"></i><b>9</b> Classification Analysis: Allocation of Observartion Groups</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="chapter9.html"><a href="chapter9.html#introduction-2"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
+<li class="chapter" data-level="9.2" data-path="chapter9.html"><a href="chapter9.html#classification-into-two-groups"><i class="fa fa-check"></i><b>9.2</b> Classification into Two Groups</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="chapter9.html"><a href="chapter9.html#example-9.2."><i class="fa fa-check"></i><b>9.2.1</b> Example 9.2.</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="chapter9.html"><a href="chapter9.html#classification-into-several-groups"><i class="fa fa-check"></i><b>9.3</b> Classification into Several Groups</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="chapter9.html"><a href="chapter9.html#example-9.3"><i class="fa fa-check"></i><b>9.3.1</b> Example 9.3</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="chapter9.html"><a href="chapter9.html#estimating-misclassification-rates"><i class="fa fa-check"></i><b>9.4</b> Estimating Misclassification Rates</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="chapter9.html"><a href="chapter9.html#example-9.4.a."><i class="fa fa-check"></i><b>9.4.1</b> Example <span class="math inline">\(9.4.(a).\)</span></a></li>
+<li class="chapter" data-level="9.4.2" data-path="chapter9.html"><a href="chapter9.html#example-9.4.b"><i class="fa fa-check"></i><b>9.4.2</b> Example <span class="math inline">\(9.4.(b)\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="chapter9.html"><a href="chapter9.html#improved-estimates-of-error-rates"><i class="fa fa-check"></i><b>9.5</b> Improved Estimates of Error Rates</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="chapter9.html"><a href="chapter9.html#example-9.5.2"><i class="fa fa-check"></i><b>9.5.1</b> Example <span class="math inline">\(9.5.2\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="chapter9.html"><a href="chapter9.html#subset-selection"><i class="fa fa-check"></i><b>9.6</b> Subset Selection</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="chapter9.html"><a href="chapter9.html#example-9.6.a."><i class="fa fa-check"></i><b>9.6.1</b> Example 9.6.(a).</a></li>
+<li class="chapter" data-level="9.6.2" data-path="chapter9.html"><a href="chapter9.html#example-9.6.b."><i class="fa fa-check"></i><b>9.6.2</b> Example 9.6.(b).</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="chapter9.html"><a href="chapter9.html#nonparametric-procedures"><i class="fa fa-check"></i><b>9.7</b> Nonparametric Procedures</a>
+<ul>
+<li class="chapter" data-level="9.7.1" data-path="chapter9.html"><a href="chapter9.html#example-9.7.2."><i class="fa fa-check"></i><b>9.7.1</b> Example 9.7.2.</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="chapter11.html"><a href="chapter11.html"><i class="fa fa-check"></i><b>10</b> Canonical Correlation</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="chapter11.html"><a href="chapter11.html#introduction-3"><i class="fa fa-check"></i><b>10.1</b> Introduction</a></li>
+<li class="chapter" data-level="10.2" data-path="chapter11.html"><a href="chapter11.html#canonical-correlations-and-canonical-variates"><i class="fa fa-check"></i><b>10.2</b> Canonical Correlations and Canonical Variates</a></li>
+<li class="chapter" data-level="10.3" data-path="chapter11.html"><a href="chapter11.html#properties-of-canonical-correlations"><i class="fa fa-check"></i><b>10.3</b> Properties of Canonical Correlations</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="chapter11.html"><a href="chapter11.html#example-11.3"><i class="fa fa-check"></i><b>10.3.1</b> Example 11.3</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="chapter11.html"><a href="chapter11.html#tests-of-significance"><i class="fa fa-check"></i><b>10.4</b> Tests of Significance</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="chapter11.html"><a href="chapter11.html#example-11.4.1."><i class="fa fa-check"></i><b>10.4.1</b> Example 11.4.1.</a></li>
+<li class="chapter" data-level="10.4.2" data-path="chapter11.html"><a href="chapter11.html#example-11.4.2."><i class="fa fa-check"></i><b>10.4.2</b> Example 11.4.2.</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="chapter11.html"><a href="chapter11.html#interpretation"><i class="fa fa-check"></i><b>10.5</b> Interpretation</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="chapter11.html"><a href="chapter11.html#example-11.5.1."><i class="fa fa-check"></i><b>10.5.1</b> Example 11.5.1.</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="chapter11.html"><a href="chapter11.html#relationships-of-canonical-correlation-analysis-to-other-multivariate-techniques"><i class="fa fa-check"></i><b>10.6</b> Relationships of Canonical Correlation Analysis to Other Multivariate Techniques</a></li>
+<li class="chapter" data-level="10.7" data-path="chapter11.html"><a href="chapter11.html#references"><i class="fa fa-check"></i><b>10.7</b> References</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">NYC 311 Service Request</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="objetivos" class="section level1" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Objetivos del producto de datos</h1>
+<p>El desarrollo de este producto de datos tiene los siguientes objetivos:</p>
+<div id="objetivo-generales" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Objetivo generales</h2>
+<ul>
+<li>Proveer una herramienta a las agencias gubernamentales para conocer con anticipación momentos en que se dará un exceso de demanda de servicios con el fin de tener una planeación y asignación adecuada.</li>
+</ul>
+</div>
+<div id="objetivos-específicos" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Objetivos específicos</h2>
+<ul>
+<li><p>Pronosticar días en que la demanda de recursos por agencia esté supere un límite establecido;</p></li>
+<li><p>Medir la divergencia en el tiempo de respuesta por distritos de la ciudad, por agencia y por tipo de solicitud.</p></li>
+</ul>
+</div>
+<div id="predicción" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Predicción</h2>
+<ul>
+<li><p>Predicción binaria que indica si el número de servicios requeridos por agencia gubernamental superará un límite previamente establecido.</p></li>
+<li><p>Re-entrenamiento 6 meses aproximadamente, luego de evaluar las métricas del modelo.</p></li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="problema.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="poblacion.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/C1587S/EMV-ejercicios/edit/master/02-objetivos.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["multivariate-statistics-R-code.pdf", "multivariate-statistics-R-code.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
