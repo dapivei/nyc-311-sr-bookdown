@@ -72,25 +72,18 @@
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
 <li class="chapter" data-level="2" data-path="problema.html"><a href="problema.html"><i class="fa fa-check"></i><b>2</b> Descripción del Problema</a></li>
-<li class="chapter" data-level="3" data-path="objetivos.html"><a href="objetivos.html"><i class="fa fa-check"></i><b>3</b> Objetivos del producto de datos</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="objetivos.html"><a href="objetivos.html#objetivo-generales"><i class="fa fa-check"></i><b>3.1</b> Objetivo generales</a></li>
-<li class="chapter" data-level="3.2" data-path="objetivos.html"><a href="objetivos.html#objetivos-específicos"><i class="fa fa-check"></i><b>3.2</b> Objetivos específicos</a></li>
-<li class="chapter" data-level="3.3" data-path="objetivos.html"><a href="objetivos.html#predicción"><i class="fa fa-check"></i><b>3.3</b> Predicción</a></li>
-</ul></li>
+<li class="chapter" data-level="3" data-path="objetivos.html"><a href="objetivos.html"><i class="fa fa-check"></i><b>3</b> Objetivos del producto de datos</a></li>
 <li class="chapter" data-level="4" data-path="poblacion.html"><a href="poblacion.html"><i class="fa fa-check"></i><b>4</b> Población objetivo</a></li>
 <li class="chapter" data-level="5" data-path="dpa.html"><a href="dpa.html"><i class="fa fa-check"></i><b>5</b> Infraestructura y Governanza de datos</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="dpa.html"><a href="dpa.html#extract-transform-and-load-etl"><i class="fa fa-check"></i><b>5.1</b> Extract, Transform and Load (ETL)</a>
+<li class="chapter" data-level="5.1" data-path="dpa.html"><a href="dpa.html#infraestructura"><i class="fa fa-check"></i><b>5.1</b> Infraestructura</a>
 <ul>
-<li class="chapter" data-level="5.1.1" data-path="dpa.html"><a href="dpa.html#deploy"><i class="fa fa-check"></i><b>5.1.1</b> Deploy</a></li>
-<li class="chapter" data-level="5.1.2" data-path="dpa.html"><a href="dpa.html#desarrollo"><i class="fa fa-check"></i><b>5.1.2</b> Desarrollo</a></li>
+<li class="chapter" data-level="5.1.1" data-path="dpa.html"><a href="dpa.html#extract-transform-and-load-etl"><i class="fa fa-check"></i><b>5.1.1</b> Extract, Transform and Load (ETL)</a></li>
+<li class="chapter" data-level="5.1.2" data-path="dpa.html"><a href="dpa.html#aspectos-técnicos-de-la-configuración-de-aws"><i class="fa fa-check"></i><b>5.1.2</b> Aspectos Técnicos de la Configuración de AWS</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="dpa.html"><a href="dpa.html#linaje-de-datos-metadatos-y-diseño-de-tablasrds-para-la-fase-del-extract-load-and-transformetl"><i class="fa fa-check"></i><b>5.2</b> Linaje de Datos: Metadatos y Diseño de Tablas(RDS) para la fase del <em>Extract, Load and Transform(ETL)</em></a>
+<li class="chapter" data-level="5.2" data-path="dpa.html"><a href="dpa.html#governanza-de-datos"><i class="fa fa-check"></i><b>5.2</b> Governanza de Datos</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="dpa.html"><a href="dpa.html#raw"><i class="fa fa-check"></i><b>5.2.1</b> Raw</a></li>
-<li class="chapter" data-level="5.2.2" data-path="dpa.html"><a href="dpa.html#preprocessed"><i class="fa fa-check"></i><b>5.2.2</b> Preprocessed</a></li>
-<li class="chapter" data-level="5.2.3" data-path="dpa.html"><a href="dpa.html#ml-preprocessing"><i class="fa fa-check"></i><b>5.2.3</b> ML preprocessing</a></li>
+<li class="chapter" data-level="5.2.1" data-path="dpa.html"><a href="dpa.html#linaje-de-datos-metadatos-y-diseño-de-tablasrds-para-la-fase-del-extract-load-and-transformetl"><i class="fa fa-check"></i><b>5.2.1</b> Linaje de Datos: Metadatos y Diseño de Tablas(RDS) para la fase del <em>Extract, Load and Transform(ETL)</em></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="metricas.html"><a href="metricas.html"><i class="fa fa-check"></i><b>6</b> Métricas de Desempeño</a></li>
@@ -137,7 +130,7 @@
 </ul></li>
 <li class="chapter" data-level="12" data-path="orquestacion.html"><a href="orquestacion.html"><i class="fa fa-check"></i><b>12</b> Orquestacion</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="orquestacion.html"><a href="orquestacion.html#data-pipeline"><i class="fa fa-check"></i><b>12.1</b> Data Pipeline</a></li>
+<li class="chapter" data-level="12.1" data-path="orquestacion.html"><a href="orquestacion.html#tasks"><i class="fa fa-check"></i><b>12.1</b> Tasks</a></li>
 <li class="chapter" data-level="12.2" data-path="orquestacion.html"><a href="orquestacion.html#dag"><i class="fa fa-check"></i><b>12.2</b> DAG</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="conclusiones.html"><a href="conclusiones.html"><i class="fa fa-check"></i><b>13</b> Conclusiones</a></li>
@@ -164,11 +157,15 @@
             <section class="normal" id="section-">
 <div id="orquestacion" class="section level1" number="12">
 <h1><span class="header-section-number">Capítulo 12</span> Orquestacion</h1>
-<div id="data-pipeline" class="section level2" number="12.1">
-<h2><span class="header-section-number">12.1</span> Data Pipeline</h2>
+<div id="tasks" class="section level2" number="12.1">
+<h2><span class="header-section-number">12.1</span> Tasks</h2>
 </div>
 <div id="dag" class="section level2" number="12.2">
 <h2><span class="header-section-number">12.2</span> DAG</h2>
+<p>Al momento de correr el <em>task</em> correspondiente a la corrida y guardado del modelo, la path dependancy se ve de la siguiente manera:</p>
+<div align="center">
+<p><image width="600" height="330" src="./images/dag_fromModel.png"></p>
+</div>
 
 </div>
 </div>

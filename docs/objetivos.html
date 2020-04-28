@@ -72,12 +72,7 @@
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
 <li class="chapter" data-level="2" data-path="problema.html"><a href="problema.html"><i class="fa fa-check"></i><b>2</b> Descripción del Problema</a></li>
-<li class="chapter" data-level="3" data-path="objetivos.html"><a href="objetivos.html"><i class="fa fa-check"></i><b>3</b> Objetivos del producto de datos</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="objetivos.html"><a href="objetivos.html#objetivo-generales"><i class="fa fa-check"></i><b>3.1</b> Objetivo generales</a></li>
-<li class="chapter" data-level="3.2" data-path="objetivos.html"><a href="objetivos.html#objetivos-específicos"><i class="fa fa-check"></i><b>3.2</b> Objetivos específicos</a></li>
-<li class="chapter" data-level="3.3" data-path="objetivos.html"><a href="objetivos.html#predicción"><i class="fa fa-check"></i><b>3.3</b> Predicción</a></li>
-</ul></li>
+<li class="chapter" data-level="3" data-path="objetivos.html"><a href="objetivos.html"><i class="fa fa-check"></i><b>3</b> Objetivos del producto de datos</a></li>
 <li class="chapter" data-level="4" data-path="poblacion.html"><a href="poblacion.html"><i class="fa fa-check"></i><b>4</b> Población objetivo</a></li>
 <li class="chapter" data-level="5" data-path="dpa.html"><a href="dpa.html"><i class="fa fa-check"></i><b>5</b> Infraestructura y Governanza de datos</a>
 <ul>
@@ -164,6 +159,7 @@
             <section class="normal" id="section-">
 <div id="objetivos" class="section level1" number="3">
 <h1><span class="header-section-number">Capítulo 3</span> Objetivos del producto de datos</h1>
+<div align="justify">
 <p>El desarrollo de este producto de datos tiene los siguientes objetivos:</p>
 <div id="objetivo-generales" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Objetivo generales</h2>
@@ -174,18 +170,21 @@
 <div id="objetivos-específicos" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Objetivos específicos</h2>
 <ul>
-<li><p>Pronosticar días en que la demanda de recursos por agencia esté supere un límite establecido;</p></li>
-<li><p>Medir la divergencia en el tiempo de respuesta por distritos de la ciudad, por agencia y por tipo de solicitud.</p></li>
+<li>Pronosticar días en que la demanda de recursos por agencia supere un límite (umbral) establecido; el umbral es el promedio observado en el mes correspondiente. Para este producto de datos en específico, nos concentraremos solo en una agencia (la Policía Departamental de Nueva York, NYPD) y un tipo de queja (ruido). <em>Los motivos en los que nos nos basamos para esta elección, serán desarrollados en la parte del análisis exploratorios de datos (EDA, por sus siglas en inglés).</em></li>
 </ul>
+<blockquote>
+<p><em>En un futuro próximo:</em> Medir la divergencia en el tiempo de respuesta por distritos de la ciudad, por agencia y por tipo de solicitud.</p>
+</blockquote>
 </div>
 <div id="predicción" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Predicción</h2>
 <ul>
-<li><p>Predicción binaria que indica si el número de servicios requeridos por agencia gubernamental superará un límite previamente establecido.</p></li>
+<li><p>Predicción binaria que indica si el número de servicios requeridos a la NYPD por ruido superará un límite previamente establecido.</p></li>
 <li><p>Re-entrenamiento 6 meses aproximadamente, luego de evaluar las métricas del modelo.</p></li>
 </ul>
-
 </div>
+</div>
+
 </div>
             </section>
 

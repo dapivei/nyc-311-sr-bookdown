@@ -72,25 +72,18 @@
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
 <li class="chapter" data-level="2" data-path="problema.html"><a href="problema.html"><i class="fa fa-check"></i><b>2</b> Descripción del Problema</a></li>
-<li class="chapter" data-level="3" data-path="objetivos.html"><a href="objetivos.html"><i class="fa fa-check"></i><b>3</b> Objetivos del producto de datos</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="objetivos.html"><a href="objetivos.html#objetivo-generales"><i class="fa fa-check"></i><b>3.1</b> Objetivo generales</a></li>
-<li class="chapter" data-level="3.2" data-path="objetivos.html"><a href="objetivos.html#objetivos-específicos"><i class="fa fa-check"></i><b>3.2</b> Objetivos específicos</a></li>
-<li class="chapter" data-level="3.3" data-path="objetivos.html"><a href="objetivos.html#predicción"><i class="fa fa-check"></i><b>3.3</b> Predicción</a></li>
-</ul></li>
+<li class="chapter" data-level="3" data-path="objetivos.html"><a href="objetivos.html"><i class="fa fa-check"></i><b>3</b> Objetivos del producto de datos</a></li>
 <li class="chapter" data-level="4" data-path="poblacion.html"><a href="poblacion.html"><i class="fa fa-check"></i><b>4</b> Población objetivo</a></li>
 <li class="chapter" data-level="5" data-path="dpa.html"><a href="dpa.html"><i class="fa fa-check"></i><b>5</b> Infraestructura y Governanza de datos</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="dpa.html"><a href="dpa.html#extract-transform-and-load-etl"><i class="fa fa-check"></i><b>5.1</b> Extract, Transform and Load (ETL)</a>
+<li class="chapter" data-level="5.1" data-path="dpa.html"><a href="dpa.html#infraestructura"><i class="fa fa-check"></i><b>5.1</b> Infraestructura</a>
 <ul>
-<li class="chapter" data-level="5.1.1" data-path="dpa.html"><a href="dpa.html#deploy"><i class="fa fa-check"></i><b>5.1.1</b> Deploy</a></li>
-<li class="chapter" data-level="5.1.2" data-path="dpa.html"><a href="dpa.html#desarrollo"><i class="fa fa-check"></i><b>5.1.2</b> Desarrollo</a></li>
+<li class="chapter" data-level="5.1.1" data-path="dpa.html"><a href="dpa.html#extract-transform-and-load-etl"><i class="fa fa-check"></i><b>5.1.1</b> Extract, Transform and Load (ETL)</a></li>
+<li class="chapter" data-level="5.1.2" data-path="dpa.html"><a href="dpa.html#aspectos-técnicos-de-la-configuración-de-aws"><i class="fa fa-check"></i><b>5.1.2</b> Aspectos Técnicos de la Configuración de AWS</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="dpa.html"><a href="dpa.html#linaje-de-datos-metadatos-y-diseño-de-tablasrds-para-la-fase-del-extract-load-and-transformetl"><i class="fa fa-check"></i><b>5.2</b> Linaje de Datos: Metadatos y Diseño de Tablas(RDS) para la fase del <em>Extract, Load and Transform(ETL)</em></a>
+<li class="chapter" data-level="5.2" data-path="dpa.html"><a href="dpa.html#governanza-de-datos"><i class="fa fa-check"></i><b>5.2</b> Governanza de Datos</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="dpa.html"><a href="dpa.html#raw"><i class="fa fa-check"></i><b>5.2.1</b> Raw</a></li>
-<li class="chapter" data-level="5.2.2" data-path="dpa.html"><a href="dpa.html#preprocessed"><i class="fa fa-check"></i><b>5.2.2</b> Preprocessed</a></li>
-<li class="chapter" data-level="5.2.3" data-path="dpa.html"><a href="dpa.html#ml-preprocessing"><i class="fa fa-check"></i><b>5.2.3</b> ML preprocessing</a></li>
+<li class="chapter" data-level="5.2.1" data-path="dpa.html"><a href="dpa.html#linaje-de-datos-metadatos-y-diseño-de-tablasrds-para-la-fase-del-extract-load-and-transformetl"><i class="fa fa-check"></i><b>5.2.1</b> Linaje de Datos: Metadatos y Diseño de Tablas(RDS) para la fase del <em>Extract, Load and Transform(ETL)</em></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="metricas.html"><a href="metricas.html"><i class="fa fa-check"></i><b>6</b> Métricas de Desempeño</a></li>
@@ -164,6 +157,10 @@
             <section class="normal" id="section-">
 <div id="dpa" class="section level1" number="5">
 <h1><span class="header-section-number">Capítulo 5</span> Infraestructura y Governanza de datos</h1>
+<div id="infraestructura" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Infraestructura</h2>
+<div align="justify">
+
 <p><strong>Gráfica 2.Data Product Pipeline: Deployment</strong></p>
 <div align="center">
 <p><image width="700" height="100" src="./images/deployment.png"></p>
@@ -172,10 +169,10 @@
 <div align="center">
 <p><image width="700" height="100" src="./images/desarrollo_produccion.png"></p>
 </div>
-<div id="extract-transform-and-load-etl" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Extract, Transform and Load (ETL)</h2>
-<div id="deploy" class="section level3" number="5.1.1">
-<h3><span class="header-section-number">5.1.1</span> Deploy</h3>
+<div id="extract-transform-and-load-etl" class="section level3" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Extract, Transform and Load (ETL)</h3>
+<div id="deploy" class="section level4" number="5.1.1.1">
+<h4><span class="header-section-number">5.1.1.1</span> Deploy</h4>
 <ol style="list-style-type: decimal">
 <li>Script en python que hace peticiones a la API de <strong>socrata</strong> usando la librería <strong>sodapy</strong> solicitando todos los registros de la base de datos en formato JSON.</li>
 <li>En la EC2 se recibe el archivo de datos y se guarda en la instancia S3. El script hace las predicciones por fecha y los archivos respuesta se van guardando en una estructura de carpetas dentro de S3. El S3 está encriptado de tal manera que solamente pueden ingresar con las credenciales asignadas.</li>
@@ -184,23 +181,23 @@
 </ol>
 <p>Los detalles de la configuración y uso de la arquitura utilizada en AWS se encuenta en <a href="https://github.com/dapivei/data-product-architecture-final-project/tree/master/scripts/conf-AWS" title="aws configuración">scripts aws</a></p>
 </div>
-<div id="desarrollo" class="section level3" number="5.1.2">
-<h3><span class="header-section-number">5.1.2</span> Desarrollo</h3>
-<div id="extract" class="section level4" number="5.1.2.1">
-<h4><span class="header-section-number">5.1.2.1</span> Extract</h4>
+<div id="desarrollo" class="section level4" number="5.1.1.2">
+<h4><span class="header-section-number">5.1.1.2</span> Desarrollo</h4>
+<div id="extract" class="section level5" number="5.1.1.2.1">
+<h5><span class="header-section-number">5.1.1.2.1</span> Extract</h5>
 <ol style="list-style-type: decimal">
 <li>Hacemos una petición a la API solicitando los datos en formato JSON por medio de un script en python. Se hará un petición al día en la que filtramos para incluir solamente los registros que se crearon el día anterior (registros nuevos). La petición actualmente se hace por número de registros. Se modificará para realizar un filtrado utilizando la variable <strong>created_date</strong>.</li>
 <li>Hacemos una segunda petición a la API solicitando los registros que se cerraron el día anterior en formato JSON. Filtramos la petición por medio de las variables <strong>closed_date</strong> (actualización de registros existentes).</li>
 </ol>
 </div>
-<div id="load" class="section level4" number="5.1.2.2">
-<h4><span class="header-section-number">5.1.2.2</span> Load</h4>
+<div id="load" class="section level5" number="5.1.1.2.2">
+<h5><span class="header-section-number">5.1.1.2.2</span> Load</h5>
 <ol style="list-style-type: decimal">
 <li>La petición de los datos en <em>extract</em> nos permite obtener los archivos JSON de la API, uno por cada petición y los registros nuevos se incorporan a la estructura de carpetas en S3 con la fecha de creación del registro (futura estructura). Los registros obtenidos por la variable closed_date se guardan en otra estructura de carpatas generada a partir de las fechas.</li>
 </ol>
 </div>
-<div id="transform" class="section level4" number="5.1.2.3">
-<h4><span class="header-section-number">5.1.2.3</span> Transform</h4>
+<div id="transform" class="section level5" number="5.1.1.2.3">
+<h5><span class="header-section-number">5.1.1.2.3</span> Transform</h5>
 <ol style="list-style-type: decimal">
 <li>Se corre un script en python (pyspark) que hace consultas a los datos almacenados en parquet, se limpian los datos, se quitan las columnas nulas o que no tienen variabilidad y incorporan los registros al esquema cleaned de la estructura de carpetas.<br />
 </li>
@@ -213,17 +210,91 @@
 </div>
 </div>
 </div>
-<div id="linaje-de-datos-metadatos-y-diseño-de-tablasrds-para-la-fase-del-extract-load-and-transformetl" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Linaje de Datos: Metadatos y Diseño de Tablas(RDS) para la fase del <em>Extract, Load and Transform(ETL)</em></h2>
+<div id="aspectos-técnicos-de-la-configuración-de-aws" class="section level3" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> Aspectos Técnicos de la Configuración de AWS</h3>
+<p><em>Nota</em>: Los scripts asociados a este apartado se encuentran en el archivo <a href="https://github.com/dapivei/data-product-architecture-final-project/tree/master/scripts/conf-AWS">conf-AWS</a>.</p>
+<div id="configuración-del-bastión" class="section level4" number="5.1.2.1">
+<h4><span class="header-section-number">5.1.2.1</span> Configuración del bastión</h4>
+<p>El bastión es una instancia pequeña <code>t2.micro</code> con <code>8gb</code> de memoria (no es necesario tener algo con mayor capacidad en este punto). Funciona como punto de seguridad y administra a los usuarios para que puedan entrar a la arquitectura de AWS.</p>
+<p>Este <code>ec2</code> vive dentro de una subnet pública en una VPC.</p>
+<p>Para tener la conexión al bastión, ocupamos el protocolo <code>ssh</code> como sigue:</p>
+<pre><code>ssh -o &quot;ServerAliveInterval 60&quot; -i /ruta/llave.pem  ubuntu@ip-ec2</code></pre>
+<p>Para salir, basta con poner <code>exit</code> en el shell de la instancia.</p>
+</div>
+<div id="addus.sh" class="section level4" number="5.1.2.2">
+<h4><span class="header-section-number">5.1.2.2</span> addus.sh</h4>
+<p>Este script crea los usuarios dentro del bastión y asigna la misma contraseña a cada uno de ellos, por lo que debemos estar conectados a la instancia. Para poder hacer uso es necesario darle los permisos, es decir, <code>chmod +x addus.sh</code>. También es importante mencionar que se utiliza un archivo txt <code>users.txt</code> que contiene el nombre de los usuarios que queremos agregar.</p>
+<p>Para la selección de contraseña, utilizamos el encriptador <code>crypt</code> contenido en python 3.6.5 usando los siguientes comandos:</p>
+<pre><code>import crypt
+crypt.crypt(&quot;contraseña&quot;,&quot;salt&quot;)</code></pre>
+<p>La salida de estos comandos debe verse como: <code>'sa1O7Z1pCJzK.'</code>; esta debe agregarse al script <code>addus.ssh</code> en la parte indicada. Para correr el archivo solo es necesario correr el siguiente comando:</p>
+<pre><code>./addus.sh</code></pre>
+<p>En este punto ya tenemos a los usuarios agregados: todos con la misma contraseña y permisos de super usuario.</p>
+</div>
+<div id="agregar-llaves-para-conexión" class="section level4" number="5.1.2.3">
+<h4><span class="header-section-number">5.1.2.3</span> Agregar llaves para conexión</h4>
+<p>Una vez creados los usuarios, copiaremos las llaves públicas de cada uno de los usuarios a su usuario correspondiente.</p>
+<ol style="list-style-type: decimal">
+<li>Es necesario modificar el archivo <code>sudo nano /etc/ssh/sshd_config</code> y cambiar los parámetros a la siguiente configuración:</li>
+</ol>
+<pre><code>PubkeyAuthentication yes
+PubkeyAuthentication yes</code></pre>
+<p>Ahora solo es necesario reiniciar el servicio sshd con el comando:</p>
+<pre><code>sudo service sshd restart
+</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Realizar el copiado de las llaves al bastión, de forma segura:</li>
+</ol>
+<pre><code>ssh-copy-id -f -i /ruta/llave/id_llave.pub usuario@ip-ec2</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Finalmente, nos reconectamos al bastión y cambiamos la configuración del archivo <code>sudo nano /etc/ssh/sshd_config</code> dejando el siguiente parámetro:</li>
+</ol>
+<pre><code>PasswordAuthentication no</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Reiniciamos el servicio <code>sudo service sshd restart</code></li>
+</ol>
+<p>Para conectarnos usando el protocolo <code>ssh</code> y la llave privada, utilizamos el siguiente comando:</p>
+<pre><code>ssh -o &quot;ServerAliveInterval 60&quot; -i /ruta/llave_privada  usuario@ip-ec2</code></pre>
+</div>
+<div id="ec2-procesamiento" class="section level4" number="5.1.2.4">
+<h4><span class="header-section-number">5.1.2.4</span> EC2 procesamiento</h4>
+<p>Esta máquina es para el procesamiento de la información y es donde viven las tareas que realiza <code>luigi</code>; cabe mencionar que esta instancia es de mayor capacidad. Aquí también debe ser instalado <code>docker</code> para la reproducibilidad del proyecto.</p>
+<p>Esta maquina vive dentro de una VPC con una subnet privada. Para tener acceso a la misma tenemos que hacer un secure copy de la llave.pem al bastion:</p>
+<pre><code>ssh -i  /tu/ruta/llave-bastion.pem /tu/ruta/llave/ec2/llave.pem ubuntu@ip-ec2:/home/ubuntu/.ssh</code></pre>
+<p>Nos conectamos al bastión y en la ruta <code>/home/ubuntu/.ssh</code> tendremos guardada la <code>llave.pem</code>. En este punto solo tendremos que hacer la conexión usando el protocolo <code>ssh</code>.</p>
+<p>Para asegurar el correcto funcionamiento del host de luigi se debe habilitar el puerto <code>8082</code>. La conexión se realiza usando el siguiente comando en la EC2</p>
+<pre><code>luigid</code></pre>
+<p>Esto activa el puerto <code>8082</code> y permite que nos conectemos usando el navegador de internet en la siguiente liga</p>
+<pre><code>ip_ec2:8082</code></pre>
+<p>Nota: si falla la conexión a la EC2 y por alguna razón no permite entrar a la liga debemos usar el siguiente comando <code>sudo lsof -t -i tcp:8082 | xargs kill -9</code> esto termina la conexión previa y así podemos reiniciar.</p>
+</div>
+<div id="para-levantar-cluster" class="section level4" number="5.1.2.5">
+<h4><span class="header-section-number">5.1.2.5</span> Para levantar cluster</h4>
+<p>A continuación se presentan los pasos a seguir para configurar y levantar el cluster, conexión y trabajo dentro del mismo. Para el óptimo desarrollo se tiene como consideración que los datos se encuentran guardados en una <code>S3</code>.</p>
+<p>Conectado en el servicio <code>EMR</code> de <code>AWS</code>, damos click en el botón <code>crear cluster</code>. Nombramos el cluster; en configuración de software escogemos <code>emr-5.29.0</code> con aplicaciones <code>Spark: Spark 2.4.4 on Hadoop 2.8.5 YARN with Ganglia 3.7.2 and Zeppelin 0.8.2</code> y finalmente seleccionamos <code>crear cluster</code></p>
+<p>Para la conexión al cluster es recomendable utilizar el explorador <code>chrome</code>. En el explorador abrimos la siguiente <a href="https://chrome.google.com/webstore/detail/foxyproxy-standard/gcknhkkoolaabfmlnjonogaaifnjlfnp?hl=es" title="complemento FoxyProxy">liga</a> para instalar el complemento <code>FoxyProxy Standard</code>, dentro de este complemento en <code>options &gt; import/export</code> subimos el archivo <code>foxyproxy-settings.xml</code>, por último en <code>proxy mode</code> seleccionamos la opción <code>Use proxies based on their pre-defined patterns and priorities</code></p>
+<ul>
+<li>Abrimos el tunel <code>ssh</code> desde la linea de comandos de la siguiente forma.</li>
+</ul>
+<pre><code>ssh -i ~/ruta/llave.pem -ND 8157 hadoop@dns_ip_aws</code></pre>
+<ul>
+<li>Desde <code>chrome</code> nos conectamos a la siguiente ruta para utilizar <code>Zeppelin</code>.</li>
+</ul>
+<pre><code>dns_ip_aws:8890</code></pre>
+</div>
+</div>
+</div>
+<div id="governanza-de-datos" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Governanza de Datos</h2>
+<div id="linaje-de-datos-metadatos-y-diseño-de-tablasrds-para-la-fase-del-extract-load-and-transformetl" class="section level3" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Linaje de Datos: Metadatos y Diseño de Tablas(RDS) para la fase del <em>Extract, Load and Transform(ETL)</em></h3>
 <hr />
 <p><strong>Objetivo</strong></p>
 <p>Presentación de los esquemas que representan el linaje de datos del ETL del proyecto “311 NYC SR”.</p>
 <hr />
 <div align="justify">
-
-
-<div id="raw" class="section level3" number="5.2.1">
-<h3><span class="header-section-number">5.2.1</span> Raw</h3>
+<div id="raw" class="section level4" number="5.2.1.1">
+<h4><span class="header-section-number">5.2.1.1</span> Raw</h4>
 <blockquote>
 <p><strong>Descripción:</strong>
 <strong>1)</strong> Petición a la <a href="https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9">API</a> los datos, filtrados por fecha.
@@ -255,8 +326,8 @@
 <li>Estatus de ejecución</li>
 </ul>
 </div>
-<div id="preprocessed" class="section level3" number="5.2.2">
-<h3><span class="header-section-number">5.2.2</span> Preprocessed</h3>
+<div id="preprocessed" class="section level4" number="5.2.1.2">
+<h4><span class="header-section-number">5.2.1.2</span> Preprocessed</h4>
 <blockquote>
 <p><strong>Descripción</strong>: Cambio del formato original (json) al formato de procesamiento (parquet).</p>
 </blockquote>
@@ -274,8 +345,9 @@
 <li>Logs del scrpit</li>
 <li>Estatus de ejecución: Fallido, exitoso, etc.</li>
 </ul>
-<div id="clean" class="section level5" number="5.2.2.0.1">
-<h5><span class="header-section-number">5.2.2.0.1</span> Clean</h5>
+</div>
+<div id="clean" class="section level4" number="5.2.1.3">
+<h4><span class="header-section-number">5.2.1.3</span> Clean</h4>
 <blockquote>
 <p><strong>Descripción</strong>: <strong>1)</strong> Limpieza de títulos de las columnas, por ejemplo: pasar los datos a minúsculas y quitar caracteres especiales. <strong>2)</strong> Asignación del tipo de dato a las columnas. <strong>3)</strong> Eliminación de las columnas vacías o sin variabilidad.</p>
 </blockquote>
@@ -293,8 +365,8 @@
 <li>Estatus de ejecución</li>
 </ul>
 </div>
-<div id="semantic" class="section level5" number="5.2.2.0.2">
-<h5><span class="header-section-number">5.2.2.0.2</span> Semantic</h5>
+<div id="semantic" class="section level4" number="5.2.1.4">
+<h4><span class="header-section-number">5.2.1.4</span> Semantic</h4>
 <blockquote>
 <p><strong>Descripción:</strong> Las entidades son las agencias; los eventos son los requerimentos de servicio que se tienen. Haremos la predicción de si al día siguiente (granularidad por definir) el número de eventos será mayor que un límite establecido previamente (promedio o por definir). En este paso se generan nuevas variables relevantes para el análisis.</p>
 </blockquote>
@@ -316,9 +388,8 @@
 <li>Estatus de ejecución</li>
 </ul>
 </div>
-</div>
-<div id="ml-preprocessing" class="section level3" number="5.2.3">
-<h3><span class="header-section-number">5.2.3</span> ML preprocessing</h3>
+<div id="ml-preprocessing" class="section level4" number="5.2.1.5">
+<h4><span class="header-section-number">5.2.1.5</span> ML preprocessing</h4>
 <p>Se le hacen las transformaciónes a los datos con el fin de ponerlos en formato y poderlos procesar con algoritmos de machine learning. Se ponen etiquetas numpericas a las variables categóricas y one hot encoding.</p>
 <blockquote>
 <p><strong>Metadata Asociada</strong>:</p>
@@ -336,6 +407,8 @@
 <li>Logs del script (estatus de ejecución por columna)</li>
 <li>Estatus de ejecución</li>
 </ul>
+</div>
+</div>
 
 </div>
 </div>
