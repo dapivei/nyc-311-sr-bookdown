@@ -70,11 +70,8 @@
 <li><a href="./">NYC311ServiceRequest</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
-<li class="chapter" data-level="2" data-path="introduccion.html"><a href="introduccion.html"><i class="fa fa-check"></i><b>2</b> Introducción</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="introduccion.html"><a href="introduccion.html#descripción-del-problema"><i class="fa fa-check"></i><b>2.1</b> Descripción del Problema</a></li>
-</ul></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="problema.html"><a href="problema.html"><i class="fa fa-check"></i><b>2</b> Descripción del Problema</a></li>
 <li class="chapter" data-level="3" data-path="objetivos.html"><a href="objetivos.html"><i class="fa fa-check"></i><b>3</b> Objetivos del producto de datos</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="objetivos.html"><a href="objetivos.html#objetivo-generales"><i class="fa fa-check"></i><b>3.1</b> Objetivo generales</a></li>
@@ -157,6 +154,135 @@
 <h1><span class="header-section-number">Capítulo 9</span> Exploratory Data Analysis (EDA)</h1>
 <div id="hallazgos" class="section level2" number="9.1">
 <h2><span class="header-section-number">9.1</span> Hallazgos</h2>
+<div align="justify">
+<p>Con el propósito de limpiar la base de datos <em>NYC 311 Service Request</em> e identificar las quejas más frecuentes y las agencias con mayor número de peticiones o quejas (que servirá como base para el modelado posterior), realizamos el siguiente análisis exploratorio con <em>pyspark</em> (medinate el uso de zeppelin).</p>
+<p>El output de este análisis es el siguiente documento: <a href="https://github.com/dapivei/data-product-architecture-final-project/blob/master/eda/eda_nyc311.json">eda_nyc311.json</a>; mismo que será publicado próximamente en <a href="https://www.zepl.com/">ZeppelinHub</a>.</p>
+<p>Acá se presenta un breve resumen.</p>
+<div id="estructura-inicial" class="section level4" number="9.1.0.1">
+<h4><span class="header-section-number">9.1.0.1</span> Estructura Inicial</h4>
+<p>En el momento en que realizamos el EDA, la base datos tenía la siguiente estructura:</p>
+<pre><code>root
+ |-- address_type: string (nullable = true)
+ |-- agency: string (nullable = true)
+ |-- agency_name: string (nullable = true)
+ |-- bbl: string (nullable = true)
+ |-- borough: string (nullable = true)
+ |-- bridge_highway_direction: string (nullable = true)
+ |-- bridge_highway_name: string (nullable = true)
+ |-- bridge_highway_segment: string (nullable = true)
+ |-- city: string (nullable = true)
+ |-- closed_date: string (nullable = true)
+ |-- community_board: string (nullable = true)
+ |-- complaint_type: string (nullable = true)
+ |-- created_date: string (nullable = true)
+ |-- cross_street_1: string (nullable = true)
+ |-- cross_street_2: string (nullable = true)
+ |-- descriptor: string (nullable = true)
+ |-- due_date: string (nullable = true)
+ |-- facility_type: string (nullable = true)
+ |-- incident_address: string (nullable = true)
+ |-- incident_zip: string (nullable = true)
+ |-- intersection_street_1: string (nullable = true)
+ |-- intersection_street_2: string (nullable = true)
+ |-- landmark: string (nullable = true)
+ |-- latitude: string (nullable = true)
+ |-- location: struct (nullable = true)
+ |    |-- human_address: string (nullable = true)
+ |    |-- latitude: string (nullable = true)
+ |    |-- longitude: string (nullable = true)
+ |-- location_type: string (nullable = true)
+ |-- longitude: string (nullable = true)
+ |-- open_data_channel_type: string (nullable = true)
+ |-- park_borough: string (nullable = true)
+ |-- park_facility_name: string (nullable = true)
+ |-- resolution_action_updated_date: string (nullable = true)
+ |-- resolution_description: string (nullable = true)
+ |-- road_ramp: string (nullable = true)
+ |-- status: string (nullable = true)
+ |-- street_name: string (nullable = true)
+ |-- taxi_company_borough: string (nullable = true)
+ |-- taxi_pick_up_location: string (nullable = true)
+ |-- unique_key: string (nullable = true)
+ |-- vehicle_type: string (nullable = true)
+ |-- x_coordinate_state_plane: string (nullable = true)
+ |-- y_coordinate_state_plane: string (nullable = true)</code></pre>
+<ul>
+<li><p><em>Variables totales</em>: <span class="math inline">\(40\)</span>.</p></li>
+<li><p><em>Registros totales (quejas)</em>: <span class="math inline">\(22,601,839\)</span>.</p></li>
+</ul>
+</div>
+<div id="valores-nulos" class="section level3" number="9.1.1">
+<h3><span class="header-section-number">9.1.1</span> Valores nulos</h3>
+<ul>
+<li><p><em>Problemas:</em> Los valores nulos no estaban homogenizados; existían registros ‘N/A’, ‘nan’, ‘NaN’, ‘n/a’, ‘Na’, ‘.’</p></li>
+<li><p><em>Solución:</em> Homogeneizar esos valores a “nulls”.</p></li>
+<li><p><em>Observación:</em> Las variables con mayor porcentaje de valores nulos son aquellos de locación (zip-code, domicilio, calles colindante, entre otros) o tipo de instalación. Aún así, el porcentaje de registros con valores nulos es menor al uno por ciento.</p></li>
+</ul>
+<div id="tipo-de-variables" class="section level4" number="9.1.1.1">
+<h4><span class="header-section-number">9.1.1.1</span> Tipo de variables</h4>
+<ul>
+<li><p><em>Problemas:</em> Variables con tipos distintos al que realmente son.</p></li>
+<li><p><em>Solución:</em> Cambio de variables a sus tipos correctos.</p></li>
+<li><p><em>Observación 1</em>: Por la naturaleza de la pregunta objeto del presente trabajo, únicamente nos quedaremos con la variable <em>created_date</em> (fecha de creación de las quejas).</p></li>
+<li><p><em>Observación 2:</em> Tras la limipieza correspondiente, no quedarán valores numéricos: únicamente valores de string y timestamp.</p></li>
+</ul>
+</div>
+</div>
+<div id="registros-con-mayúsculas-y-minúsculas" class="section level3" number="9.1.2">
+<h3><span class="header-section-number">9.1.2</span> Registros con mayúsculas y minúsculas</h3>
+<ul>
+<li><em>Solución</em>: Cambiar todos los registros a minúsculas.</li>
+</ul>
+</div>
+<div id="valores-únicos" class="section level3" number="9.1.3">
+<h3><span class="header-section-number">9.1.3</span> Valores únicos</h3>
+<p>La mayoría de las variables son variables de tipo categórico. Aún así, conforme con la tabla que se muestra a continucaión, cada variable tiepo múltiples categorías.</p>
+<div align="center">
+<p><image width="300" height="330" src="./images/unique_values.png"></p>
+</div>
+</div>
+<div id="quejas-según-su-estatus" class="section level3" number="9.1.4">
+<h3><span class="header-section-number">9.1.4</span> Quejas según su estatus</h3>
+<p>Las quejas son clasificadas en 12 categorías; <span class="math inline">\(95\)</span> por ciento de las quejas se encuentran con estatus <em>cerrado</em>.</p>
+<div align="center">
+<p><image width="600" height="330" src="./images/cases_status.png"></p>
+</div>
+</div>
+<div id="quejas-según-municipio" class="section level3" number="9.1.5">
+<h3><span class="header-section-number">9.1.5</span> Quejas según municipio</h3>
+<p>El municipio/condado con mayor número de quejas es <em>Brooklyn</em>, con cerca de 6.72 millones de quejas en total (desde el 2010); le siguen, Queens, Manhattan, Bronx y Staten Island.</p>
+<div align="center">
+<p><image width="600" height="330" src="./images/cases_borough.png"></p>
+</div>
+</div>
+<div id="quejas-según-agencia" class="section level3" number="9.1.6">
+<h3><span class="header-section-number">9.1.6</span> Quejas según agencia</h3>
+<p>Existe 31 distintos registros de tipos de agencia en la base de datos. Entre estos distintos tipos de agencias, las agencias con mayor número</p>
+<div align="center">
+<p><image width="600" height="330" src="./images/cases_agency.png"></p>
+</div>
+</div>
+<div id="quejas-según-tipo-de-quejas" class="section level3" number="9.1.7">
+<h3><span class="header-section-number">9.1.7</span> Quejas según tipo de quejas</h3>
+<p>Como se vio anteriormente, los tipos de quejas se clasifican en 428 tipos, previo a realizar cualquier tipo de limipieza.</p>
+<p>Sin realizar ninguna limpieza previa, es notorio que la mayoría de las quejas tienen que ver con temas de ruido residencial; para ser precisos, históricamente, cerca del 8 por ciento (1.86 milllones) de las quejas han sido relativas a este asunto.</p>
+<div align="center">
+<p><image width="600" height="330" src="./images/cases_complaint.png"></p>
+</div>
+</div>
+<div id="ruido-bigcup-nypd" class="section level3" number="9.1.8">
+<h3><span class="header-section-number">9.1.8</span> Ruido <span class="math inline">\(\bigcup\)</span> NYPD</h3>
+<div align="center">
+<p><image width="600" height="330" src="./images/noise_nypd.png"></p>
+</div>
+</div>
+<div id="quejas-por-año" class="section level3" number="9.1.9">
+<h3><span class="header-section-number">9.1.9</span> Quejas por año</h3>
+<div align="center">
+<p><image width="300" height="330" src="./images/cases_year.png"></p>
+</div>
+</div>
+</div>
 </div>
 <div id="clean-1" class="section level2" number="9.2">
 <h2><span class="header-section-number">9.2</span> Clean</h2>
@@ -219,6 +345,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
