@@ -94,7 +94,7 @@ La mayoría de las variables son variables de tipo categórico. Aún así, confo
 
 <div align="center">
 
-<image width="300" height="330" src="./images/unique_values.png">
+<image width="250" height="270" src="./images/unique_values.png">
 
 </div>
 
@@ -104,7 +104,7 @@ Las quejas son clasificadas en 12 categorías; $95$ por ciento de las quejas se 
 
 <div align="center">
 
-<image width="600" height="330" src="./images/cases_status.png">
+<image width="600" height="280" src="./images/cases_status.png">
 
 </div>
 
@@ -114,7 +114,7 @@ El municipio/condado con mayor número de quejas es *Brooklyn*, con cerca de 6.7
 
 <div align="center">
 
-<image width="600" height="330" src="./images/cases_borough.png">
+<image width="600" height="280" src="./images/cases_borough.png">
 
 </div>
 
@@ -124,7 +124,7 @@ Existe 31 distintos registros de tipos de agencia en la base de datos. Entre est
 
 <div align="center">
 
-<image width="600" height="330" src="./images/cases_agency.png">
+<image width="600" height="280" src="./images/cases_agency.png">
 
 </div>
 
@@ -138,7 +138,7 @@ Sin realizar ninguna limpieza previa, es notorio que la mayoría de las quejas t
 <div align="center">
 
 
-<image width="600" height="330" src="./images/cases_complaint.png">
+<image width="600" height="280" src="./images/cases_complaint.png">
 
 </div>
 
@@ -147,7 +147,7 @@ Sin realizar ninguna limpieza previa, es notorio que la mayoría de las quejas t
 <div align="center">
 
 
-<image width="600" height="330" src="./images/noise_nypd.png">
+<image width="600" height="280" src="./images/noise_nypd.png">
 
 
 </div>
