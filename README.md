@@ -3,7 +3,7 @@
 
 <div align="justify">
 
-Seleccione [aquí](https://dapivei.github.io/MCA/) para acceder al reporte de avances del proyecto.
+Seleccione [aquí](https://dapivei.github.io/prueba/) para acceder al reporte de avances del proyecto.
 
 
 
