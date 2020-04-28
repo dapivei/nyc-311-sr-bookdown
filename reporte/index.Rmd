@@ -9,7 +9,7 @@ documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-github-repo: https://github.com/dapivei/data-product-architecture-final-project
+github-repo: https://github.com/dapivei/prueba
 description: "Descripción de la implementación de un producto de datos: predicciones sobre el flujo de quejas diarias (por encima), del flujo promedio de quejas."
 
 ---
