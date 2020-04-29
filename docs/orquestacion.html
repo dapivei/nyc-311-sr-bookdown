@@ -131,7 +131,6 @@
 <li class="chapter" data-level="12" data-path="orquestacion.html"><a href="orquestacion.html"><i class="fa fa-check"></i><b>12</b> Orquestacion</a>
 <ul>
 <li class="chapter" data-level="12.1" data-path="orquestacion.html"><a href="orquestacion.html#tasks"><i class="fa fa-check"></i><b>12.1</b> Tasks</a></li>
-<li class="chapter" data-level="12.2" data-path="orquestacion.html"><a href="orquestacion.html#dag"><i class="fa fa-check"></i><b>12.2</b> DAG</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="conclusiones.html"><a href="conclusiones.html"><i class="fa fa-check"></i><b>13</b> Conclusiones</a></li>
 <li class="chapter" data-level="14" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i><b>14</b> Referencias</a></li>
@@ -159,12 +158,77 @@
 <h1><span class="header-section-number">Capítulo 12</span> Orquestacion</h1>
 <div id="tasks" class="section level2" number="12.1">
 <h2><span class="header-section-number">12.1</span> Tasks</h2>
-</div>
+<div align="justify">
+<p>Para el desarrollo del proyecto, hasta el momento contamos con los siguientes tasks.</p>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Task</th>
+<th>Descripción de la Tarea</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Task_10_download</td>
+<td>Baja los datos de la api</td>
+</tr>
+<tr class="even">
+<td>Task_20_metaDownload</td>
+<td>Genera metadatos de la extraccion de la API</td>
+</tr>
+<tr class="odd">
+<td>Task_30_preproc</td>
+<td>Cambia los datos de json a parquet</td>
+</tr>
+<tr class="even">
+<td>Task_40_metaPreproc</td>
+<td>Genera los metadatos del preprocesamiento</td>
+</tr>
+<tr class="odd">
+<td>Task_50_cleaned</td>
+<td>Limpia los datos y los regresa en formato parquet</td>
+</tr>
+<tr class="even">
+<td>Task_60_metaClean</td>
+<td>Guarda los metadatos de clean</td>
+</tr>
+<tr class="odd">
+<td>Task_70_mlPreproc</td>
+<td>Actualiza la matriz base de prerpocesamiento de ML</td>
+</tr>
+<tr class="even">
+<td>Task_71_mlPreproc_firstTime</td>
+<td>Genera la matriz base de preprocesamiento de ML</td>
+</tr>
+<tr class="odd">
+<td>Task_80_metaMlPreproc</td>
+<td>Genera los metadatos del task 71</td>
+</tr>
+<tr class="even">
+<td>Task_91_ml_firstTime</td>
+<td>Feature engineering</td>
+</tr>
+<tr class="odd">
+<td>Task_100_Train</td>
+<td>Entrena el modelo con un rando forest y guarda el pickle</td>
+</tr>
+<tr class="even">
+<td>Task_110_metaModel</td>
+<td>Genera los metadatos del entrenamiento</td>
+</tr>
+</tbody>
+</table>
 <div id="dag" class="section level2" number="12.2">
 <h2><span class="header-section-number">12.2</span> DAG</h2>
 <p>Al momento de correr el <em>task</em> correspondiente a la corrida y guardado del modelo, la path dependancy se ve de la siguiente manera:</p>
 <div align="center">
 <p><image width="600" height="330" src="./images/dag_fromModel.png"></p>
+</div>
+</div>
 </div>
 
 </div>
