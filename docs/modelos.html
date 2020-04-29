@@ -128,7 +128,7 @@
 </ul></li>
 <li class="chapter" data-level="12" data-path="orquestacion.html"><a href="orquestacion.html"><i class="fa fa-check"></i><b>12</b> Orquestacion</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="orquestacion.html"><a href="orquestacion.html#data-pipeline"><i class="fa fa-check"></i><b>12.1</b> Data Pipeline</a></li>
+<li class="chapter" data-level="12.1" data-path="orquestacion.html"><a href="orquestacion.html#tasks"><i class="fa fa-check"></i><b>12.1</b> Tasks</a></li>
 <li class="chapter" data-level="12.2" data-path="orquestacion.html"><a href="orquestacion.html#dag"><i class="fa fa-check"></i><b>12.2</b> DAG</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="conclusiones.html"><a href="conclusiones.html"><i class="fa fa-check"></i><b>13</b> Conclusiones</a></li>
@@ -257,12 +257,24 @@
 <li>n_estimators= <span class="math inline">\(100\)</span></li>
 </ul>
 <p><em>Acurracy</em>:</p>
-<ol start="2" style="list-style-type: decimal">
-<li></li>
-<li></li>
-</ol>
-<p><em>Nota</em>:</p>
-<p>Para ver el código asociado a cada modelo, remitirse a la siguiente carpeta: <a href="https://github.com/dapivei/data-product-architecture-final-project/tree/master/scripts/model">model</a></p>
+<table>
+<thead>
+<tr class="header">
+<th>Training</th>
+<th>Validation</th>
+<th>Test</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0.959496</td>
+<td>0.839449</td>
+<td>0.75935</td>
+</tr>
+</tbody>
+</table>
+<p><em>Nota</em>:
+Para ver el código asociado a cada modelo, remitirse a la siguiente carpeta: <a href="https://github.com/dapivei/data-product-architecture-final-project/tree/master/scripts/model">model</a>.</p>
 <p>Para ver el código asociado a los tasks que mandan a correr estos modelos y los guardan en un pickle en S3, revisar la carpeta: <a href="https://github.com/dapivei/data-product-architecture-final-project/tree/master/scripts/luigi">luigi</a>.</p>
 </div>
 </div>
