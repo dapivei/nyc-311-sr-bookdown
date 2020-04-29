@@ -13,7 +13,7 @@ github-repo: https://github.com/dapivei/prueba
 description: "Descripción de la implementación de un producto de datos: predicciones sobre el flujo de quejas diarias (por encima), del flujo promedio de quejas."
 
 ---
-
+<div align="justify">
 
 # Introducción
 
@@ -29,5 +29,5 @@ El gobierno de Nueva York, con el fin de proveer a la comunidad *newyorkina* con
 
 </div>
 
-
+</div>
 
