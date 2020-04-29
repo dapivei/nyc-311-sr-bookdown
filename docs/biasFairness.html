@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 6 Modelos | NYC 311 Service Request Data Product</title>
+  <title>Capítulo 9 Bias y Fairness | NYC 311 Service Request Data Product</title>
   <meta name="description" content="Descripción de la implementación de un producto de datos: predicciones sobre el flujo de quejas diarias (por encima), del flujo promedio de quejas." />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 6 Modelos | NYC 311 Service Request Data Product" />
+  <meta property="og:title" content="Capítulo 9 Bias y Fairness | NYC 311 Service Request Data Product" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="https://github.com/dapivei/prueba" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 6 Modelos | NYC 311 Service Request Data Product" />
+  <meta name="twitter:title" content="Capítulo 9 Bias y Fairness | NYC 311 Service Request Data Product" />
   
   <meta name="twitter:description" content="Descripción de la implementación de un producto de datos: predicciones sobre el flujo de quejas diarias (por encima), del flujo promedio de quejas." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="eda.html"/>
-<link rel="next" href="metricas.html"/>
+<link rel="prev" href="continuos-integration.html"/>
+<link rel="next" href="solucion.html"/>
 <script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -132,6 +132,8 @@
 <li class="chapter" data-level="6" data-path="modelos.html"><a href="modelos.html"><i class="fa fa-check"></i><b>6</b> Modelos</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="modelos.html"><a href="modelos.html#feature-engineering"><i class="fa fa-check"></i><b>6.1</b> Feature engineering</a></li>
+<li class="chapter" data-level="6.2" data-path="modelos.html"><a href="modelos.html#tuneo-de-hiperparámetros"><i class="fa fa-check"></i><b>6.2</b> Tuneo de hiperparámetros</a></li>
+<li class="chapter" data-level="6.3" data-path="modelos.html"><a href="modelos.html#selección-de-modelos"><i class="fa fa-check"></i><b>6.3</b> Selección de Modelos</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="metricas.html"><a href="metricas.html"><i class="fa fa-check"></i><b>7</b> Métricas de Desempeño</a></li>
 <li class="chapter" data-level="8" data-path="continuos-integration.html"><a href="continuos-integration.html"><i class="fa fa-check"></i><b>8</b> Continuous integration CI</a>
@@ -180,146 +182,23 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="modelos" class="section level1" number="6">
-<h1><span class="header-section-number">Capítulo 6</span> Modelos</h1>
-<div id="feature-engineering" class="section level2" number="6.1">
-<h2><span class="header-section-number">6.1</span> Feature engineering</h2>
-<div align="justify">
-<p>A partir de la variable <em>created_date (día-mes-año en que se levantó la queja)</em> se crearon las siguientes variables:</p>
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Variable</th>
-<th>Descripción</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>complain_type</td>
-<td>tipo de queja = noise</td>
-</tr>
-<tr class="even">
-<td>number_cases</td>
-<td>número de casos registrados en el día</td>
-</tr>
-<tr class="odd">
-<td>mean_month</td>
-<td>promedio de casos registrados en un mes (histórico)</td>
-</tr>
-<tr class="even">
-<td><strong>number_cases &gt; mean_month</strong></td>
-<td>variable indicadora – día con número de quejas superiores al promedio del mes</td>
-</tr>
-<tr class="odd">
-<td>created_date_day</td>
-<td>día del mes en que se levantó la queja (1-31) – one hot encoding</td>
-</tr>
-<tr class="even">
-<td>created_date_month</td>
-<td>indicador del mes de registro de la queja (1-12) – one hot encoding</td>
-</tr>
-<tr class="odd">
-<td>created_date_dow</td>
-<td>día de la semana en que se levantó la queja (1-7) – one hot encoder</td>
-</tr>
-<tr class="even">
-<td>created_date_year</td>
-<td>año de registro de la queja – one hot encoding</td>
-</tr>
-<tr class="odd">
-<td>created_date_woy</td>
-<td>número de semana del año en que fue registrada la queja (1-52) – one hot encoding</td>
-</tr>
-<tr class="even">
-<td>date_holiday</td>
-<td>indicador binario si el día en que se registro la queja fue un feriado o no</td>
-</tr>
-<tr class="odd">
-<td>number_cases_1day_ago</td>
-<td>número de casos registrados 1 día antes</td>
-</tr>
-<tr class="even">
-<td>number_cases_2days_ago</td>
-<td>número de casos registrados dos días antes</td>
-</tr>
-<tr class="odd">
-<td>number_cases_3days_ago</td>
-<td>número de casos registrados tres días antes</td>
-</tr>
-<tr class="even">
-<td>number_cases_4days_ago</td>
-<td>número de casos registrados cuatro días antes</td>
-</tr>
-<tr class="odd">
-<td>number_cases_5days_ago</td>
-<td>número de casos registrados cinco días antes</td>
-</tr>
-</tbody>
-</table>
-<p>Estas variables fueron empleadas en el modelado.</p>
-<p><strong>Propuestas a futuro:</strong></p>
-<ul>
-<li>Aumentar las variables cambiando el número de días anteriores: {1,2,3,4,5,6,7,,8,9,10,…}</li>
-<li>Segmentar por zonas geográficas. La siguiente <a href="https://www.census.gov/en.html" title="censo usa">liga</a> contiene información por explorar:
-<ul>
-<li>Buscar información de número de pobladores por zona</li>
-<li>Información del tipo de residencias existentes (número de casas/departamentos/edificios)</li>
-<li>Ingreso promedio por zona</li>
-<li>Etnias</li>
-</ul></li>
-</ul>
-<div id="tuneo-de-hiperparámetros" class="section level2" number="6.2">
-<h2><span class="header-section-number">6.2</span> Tuneo de hiperparámetros</h2>
-<p>Pendiente.</p>
+<div id="biasFairness" class="section level1" number="9">
+<h1><span class="header-section-number">Capítulo 9</span> Bias y Fairness</h1>
+<div id="aequitas" class="section level2" number="9.1">
+<h2><span class="header-section-number">9.1</span> Aequitas</h2>
 </div>
-<div id="selección-de-modelos" class="section level2" number="6.3">
-<h2><span class="header-section-number">6.3</span> Selección de Modelos</h2>
-<p>Para predecir si la Policía Departamental de Nueva York, en un día determinado, recibirá un número de quejas (o peticiones de servicio) por encima del promedio diario esperado para un mes determinado, implementamos los siguientes modelos:</p>
-<ol style="list-style-type: decimal">
-<li>Random Forest</li>
-</ol>
-<p><em>Hiperparámetros asociados</em>:</p>
-<ul>
-<li>max_depth =<span class="math inline">\(10\)</span></li>
-<li>criterio =‘gini’</li>
-<li>n_estimators= <span class="math inline">\(100\)</span></li>
-</ul>
-<p><em>Acurracy</em>:</p>
-<table>
-<thead>
-<tr class="header">
-<th>Training</th>
-<th>Validation</th>
-<th>Test</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0.959496</td>
-<td>0.839449</td>
-<td>0.75935</td>
-</tr>
-</tbody>
-</table>
-<p><em>Nota</em>:
-Para ver el código asociado a cada modelo, remitirse a la siguiente carpeta: <a href="https://github.com/dapivei/data-product-architecture-final-project/tree/master/scripts/model">model</a>.</p>
-<p>Para ver el código asociado a los tasks que mandan a correr estos modelos y los guardan en un pickle en S3, revisar la carpeta: <a href="https://github.com/dapivei/data-product-architecture-final-project/tree/master/scripts/luigi">luigi</a>.</p>
-</div>
+<div id="aifairness360-aif360" class="section level2" number="9.2" align="justify">
+<h2><span class="header-section-number">9.2</span> AIFairness360 (AIF360)</h2>
 </div>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="eda.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="metricas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="continuos-integration.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="solucion.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -350,7 +229,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/dapivei/prueba05-modelos.Rmd",
+"link": "https://github.com/dapivei/prueba08-bias_fairness.Rmd",
 "text": "Edit"
 },
 "history": {
