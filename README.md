@@ -3,7 +3,7 @@
 
 <div align="justify">
 
-Boowndown asociado al siguiente repositorio [data-product-architecture-final-project](https://github.com/dapivei/data-product-architecture-final-project).
+Boowdown asociado al siguiente repositorio [data-product-architecture-final-project](https://github.com/dapivei/data-product-architecture-final-project).
 
 
 **Información de Contacto:**
