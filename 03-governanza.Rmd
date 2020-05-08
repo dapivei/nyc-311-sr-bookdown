@@ -110,5 +110,8 @@ Se le hacen las transformaciónes a los datos con el fin de ponerlos en formato 
 + Logs del script (estatus de ejecución por columna)
 + Estatus de ejecución
 
+## Linaje de Datos: Metadatos y Diseño de Tablas(RDS) para la fase: *Modeling*
+
+## Linaje de Datos: Metadatos y Diseño de Tablas(RDS) para la fase: *Unit Testing*
 
 </div>

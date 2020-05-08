@@ -1,7 +1,7 @@
 # Orquestación del flujo de trabajo {#orquestacion}
 
 
-## Tasks
+## Pipeline principal
 
 <div align="justify">
 
@@ -23,7 +23,7 @@ Task_70_mlPreproc | Actualiza la matriz base de prerpocesamiento de ML|Task_60_m
 |Task_110_metaModel|Genera los metadatos del entrenamiento|Task_100_Train completo|
 
 
-## DAG
+### DAG Asociado
 
 Al momento de correr el *task* correspondiente a la corrida y guardado del modelo, la gráfica de dependencia se ve de la siguiente manera:
 
@@ -36,4 +36,9 @@ Al momento de correr el *task* correspondiente a la corrida y guardado del model
 
 Cada nodo representa una tarea (*task*) que debe ser corrida. Los *task* en verde indican que la tarea que representa ese nodo ha sido completada; los *nodos* en amarillo representan a aquellos *task* que están pendientes.  
 
+
+
+## Pipeline de Unit Testing
+
+### DAG Asociado
 </div>
