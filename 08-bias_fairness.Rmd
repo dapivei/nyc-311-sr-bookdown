@@ -11,7 +11,9 @@ Al no contar con datos personales (como raza o género de los solicitantes del s
 <div align="center">
 
 <image width="500" height="500" src="./images/nyc_boroughs.png">
+
 </div>
+
 
 Fuente: [alamy](https://www.alamy.com/stock-image-modern-city-map-new-york-city-of-the-usa-with-boroughs-and-titles-160125612.html)
 
