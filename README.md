@@ -11,7 +11,7 @@
 Este repositorio contiene el código asociado a la generación del bookdown que contiene el reporte final del proyecto implementado en el repositorio [data-product-architecture-final-project](https://github.com/dapivei/data-product-architecture-final-project).
 
 
-<image width="40" height="40" src="./images/select_sign.png"> Seleccione **[aquí](https://dapivei.github.io/nyc-31-sr-bookdown/)** para acceder al bookdown asociado al proyecto **311 NYC Service Request Web-Service**.
+<image width="40" height="40" src="./images/select_sign.png"> Seleccione **[aquí](https://dapivei.github.io/nyc-311-sr-bookdown/)** para acceder al bookdown asociado al proyecto **311 NYC Service Request Web-Service**.
 
 
 
