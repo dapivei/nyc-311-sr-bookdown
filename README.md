@@ -3,34 +3,7 @@
 
 <div align="justify">
 
-Seleccione [aquí](https://dapivei.github.io/prueba/) para acceder al reporte de avances del proyecto.
-
-
-
-### Contenidos de sitio:
-
-- [X] I. Introducción
-
-- [X] II. Problema
-
-- [X] III. Objetivos del producto de datos
-
-- [X] IV. Población Objetivo
-
-- [X] V. Data Product Arquitecture
-
-- [ ] VI. Métricas de Desempeño
-
-- [X] VII. Set de datos
-
-- [X] VIII. Solución Propuesta: Producto final
-
-- [ ] IX. Modelos utilizados
-
-- [ ] X. Implementación
-
-- [ ] XI. Conclusión
-
+Boowndown asociado al siguiente repositorio [data-product-architecture-final-project](https://github.com/dapivei/data-product-architecture-final-project).
 
 
 **Información de Contacto:**
