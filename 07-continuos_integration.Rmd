@@ -6,16 +6,28 @@ Para identificar los  posibles *bugs* lo más antes posible que se pueda, verifi
 
 ## Supuestos
 
+> Supuestos del clean
+
 * *Supuesto 1*: La fecha de cierre de *service request* es posterior o igual a la fecha de creación del *service request*.
 
 * *Supuesto 2*: De acuerdo con la API de dónde se extrajeron los datos, los registros de quejas vertidas a través de SR NYC 311, comprenden el periodo 2010 a la fecha. Confiando en la legitimidad de la API, suponemos que los valores de la fecha de creación y cierre de los SR están entre 2010 y la fecha actual.
 
+> Supuestos de las transformaciones durante el feature engineering.
 
 * *Supuesto 3*: Suponemos que las transformaciones que realizamos durante el feature engineering, especificamente durante la transformación de variable correspondiente al año de creación de SR a formato one hot encoding, fue correctas.
 
 * *Supuesto 4*: Suponemos que las transformaciones que realizamos durante el feature engineering, específicamente durante la transformación de variable correspondiente al mes de creación de SR a formato one hot encoding, fueron correctas.
 
-* *Supuesto 5*:
+> Supuesto de las transformaciones durante el machine learning preprocessing.
+
+* *Supuesto 5*: Suponemos que la función creada para generar 'casos por días' está funcionando adecuadamente.
+
+
+> Supuestos de las predicciones generadas
+
+* *Supuesto 6*: Suponemos que las predicciones pueden ser uno de dos tipos: o cero o uno.
+
+* *Supuesto 7*: Suponemos que con cada consulta, se sacan seis predicciones: una por distrito.
 
 ## Pruebas unitarias
 
@@ -31,5 +43,11 @@ Para probar nuestras suposiciones iniciales, empleamos las librería `marbles` y
 + `test_created_date_month_vs_onehot`: implementada en marbles.
 
 +  `prueba_casos_dia`: implementada en pandas.
+
++ `test_binary_predictions`:          función para evaluar si las *predicciones* arrojadas son o cero o uno.
+
++ `test_unique_values_borough`: función para evaluar que sólo hay cinco valores únicos o menos en la columna de borough, de las *predicciones*.
+
+Todos los scripts de los test se encuentran disponibles en las carpetas [tests](https://github.com/dapivei/data-product-architecture-final-project/tree/master/tests).
 
 </div>

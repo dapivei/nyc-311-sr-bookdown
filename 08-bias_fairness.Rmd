@@ -5,7 +5,7 @@ Con el fin de identificar si los modelos y predicciones, desarrollados para este
 
 ## Atributo protegido
 
-Al no contar con datos personales (como raza o género de los solicitantes del servicio de quejas NYC 311), decidimos identificar a la variable *borough* como atributo protegido; este atributo consta de 6 grupos o valores únicos: Brooklyn, Queens, Manhattan, No especificado, Staten Island. 
+Al no contar con datos personales (como raza o género de los solicitantes del servicio de quejas NYC 311), decidimos identificar a la variable *borough* como atributo protegido; este atributo consta de 6 grupos o valores únicos: Brooklyn, Bronx, Queens, Manhattan, No especificado, Staten Island. 
 
 **Mapa de la ciudad de Nueva York**
 <div align="center">
@@ -17,18 +17,35 @@ Al no contar con datos personales (como raza o género de los solicitantes del s
 
 Fuente: [alamy](https://www.alamy.com/stock-image-modern-city-map-new-york-city-of-the-usa-with-boroughs-and-titles-160125612.html)
 
+Cambiaremos los valores de la columna borough para facilitar la interpretación y asegurar de que sea considerada como una variable categórica en el reporte de Aequitas de la siguiente manera:
+
++ borough_bronx = A 
++ borough_brooklyn = B 
++ borough_manhattan = C 
++ borough_queens = D 
++ borough_staten island = E 
++ borough_unspecified  = F 
+
+ **Diferencias en predicciones por distrito**
+<div align="center">
+
+<image width="300" height="250" src="./images/score_borough.png">
+
+</div>
+
+En la gráfica anterior, notamos que hay una diferencia en la distribución de las predicciones por distrito. Por ejemplo, una gran mayoría de las predicciones de _Bronx_ no están por encima de la media, mientras que alrededor de la mitad de las predicciones de Manhattan y Queens, predicen demandan de 
+
 ## Grupo de referencia
 
-El grupo de referencia será Brooklyn, mismo que fue escogido por tener el mayor tamaño entre todos los grupos existentes, con un valor aproximado de $6.72$ millones de quejas del total de $22,601,839$.
+El grupo de referencia es Brooklyn, mismo que fue escogido por tener el mayor tamaño entre todos los grupos existentes, con un valor aproximado de $6.72$ millones de quejas del total de $22,601,839$.
 
 
 ## Métricas de equidad y sesgo
 
 Probamos las siguientes métricas de equidad y sesgo:
 
-* Proportional Parity: auditamos si cada condado está representado proporcionalmente a su represetnación en la población en general.
+* Proportional Parity: auditamos si cada distrito está representado proporcionalmente a su representación en la población en general.
 * False Positive Parity: auditamos si el modelo genera, proporcionalmente, la misma cantidad de errores falsos positivos.
-
 * False Negative Parity: auditamos si el modelo genera, proporcionalmente, la misma cantidad de errores falsos negativos.
 
 ## Input
@@ -49,6 +66,45 @@ Para obtener los resultados preliminares, subimos un archivo .csv al sitio-web d
 
 ## Resultados
 
+A manera de ejemplo, a continuación presentamos los resultados de uno de los modelos entrenados.
+
+> **RandomForestClassifier**(bootstrap=True, ccp_alpha=0.0, class_weight=None,criterion='gini', max_depth=20, max_features='auto', max_leaf_nodes=None, max_samples=None, min_impurity_decrease=0.0, min_impurity_split=None,         min_samples_leaf=1, min_samples_split=2,                  min_weight_fraction_leaf=0.0, n_estimators=15, n_jobs=-1,           oob_score=False, random_state=None, verbose=0, warm_start=False)
+
+
+
+ **Diferencias en predicciones por distrito**
+<div align="center">
+
+<image width="700" height="400" src="./images/bias_metrics.png">
+
+</div>
+
+
+
+ **Diferencias en predicciones por distrito**
+<div align="center">
+
+<image width="613" height="400" src="./images/disparity_metrics_i.png">
+<image width="600" height="190" src="./images/disparity_metrics_ii.png">
+
+</div>
+
+
+
+
+ **Diferencias en predicciones por distrito**
+<div align="center">
+
+<image width="700" height="400" src="./images/disparity_metrics_iii.png">
+
+</div>
+
+ **Diferencias en predicciones por distrito**
+<div align="center">
+
+<image width="600" height="400" src="./images/disparity_metrics_iv.png">
+<image width="600" height="190" src="./images/disparity_metrics_v.png">
+</div>
 
 
 

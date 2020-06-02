@@ -1,4 +1,13 @@
 # Referencias {#referencias}
 
 
+Sitios de internet consultados:
+
++ [Dssg/aequitas](https://github.com/dssg/aequitas)
+
++ [The bias and Fairness Audit Toolkit for Machine Learning](https://dssg.github.io/aequitas/)
+
++ [Aequitas](http://www.datasciencepublicpolicy.org/projects/aequitas/)
+
+
 

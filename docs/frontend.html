@@ -24,7 +24,7 @@
 <meta name="author" content="Cadavid-Sánchez Sebastián, Herrera Musi Juan Pablo, Paz Cendejas Francisco, Villa Lizárraga Diego M. &amp; Pinto Veizaga Daniela" />
 
 
-<meta name="date" content="2020-05-08" />
+<meta name="date" content="2020-06-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -140,16 +140,8 @@
 <li class="chapter" data-level="7" data-path="metricas.html"><a href="metricas.html"><i class="fa fa-check"></i><b>7</b> Métricas de Desempeño</a></li>
 <li class="chapter" data-level="8" data-path="continuos-integration.html"><a href="continuos-integration.html"><i class="fa fa-check"></i><b>8</b> Continuous integration CI</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="continuos-integration.html"><a href="continuos-integration.html#pruebas-de-código"><i class="fa fa-check"></i><b>8.1</b> Pruebas de código</a></li>
-<li class="chapter" data-level="8.2" data-path="continuos-integration.html"><a href="continuos-integration.html#tipos-de-pruebas"><i class="fa fa-check"></i><b>8.2</b> Tipos de pruebas</a></li>
-<li class="chapter" data-level="8.3" data-path="continuos-integration.html"><a href="continuos-integration.html#pruebas-unitarias"><i class="fa fa-check"></i><b>8.3</b> Pruebas unitarias</a></li>
-<li class="chapter" data-level="8.4" data-path="continuos-integration.html"><a href="continuos-integration.html#unittest"><i class="fa fa-check"></i><b>8.4</b> Unittest</a>
-<ul>
-<li class="chapter" data-level="8.4.1" data-path="continuos-integration.html"><a href="continuos-integration.html#asserts"><i class="fa fa-check"></i><b>8.4.1</b> Asserts</a></li>
-<li class="chapter" data-level="8.4.2" data-path="continuos-integration.html"><a href="continuos-integration.html#fixtures"><i class="fa fa-check"></i><b>8.4.2</b> Fixtures</a></li>
-<li class="chapter" data-level="8.4.3" data-path="continuos-integration.html"><a href="continuos-integration.html#mocks"><i class="fa fa-check"></i><b>8.4.3</b> Mocks</a></li>
-</ul></li>
-<li class="chapter" data-level="8.5" data-path="continuos-integration.html"><a href="continuos-integration.html#unit-test-para-dsml"><i class="fa fa-check"></i><b>8.5</b> Unit test para DS/ML</a></li>
+<li class="chapter" data-level="8.1" data-path="continuos-integration.html"><a href="continuos-integration.html#supuestos"><i class="fa fa-check"></i><b>8.1</b> Supuestos</a></li>
+<li class="chapter" data-level="8.2" data-path="continuos-integration.html"><a href="continuos-integration.html#pruebas-unitarias"><i class="fa fa-check"></i><b>8.2</b> Pruebas unitarias</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="biasFairness.html"><a href="biasFairness.html"><i class="fa fa-check"></i><b>9</b> Bias y Fairness</a>
 <ul>
@@ -159,7 +151,11 @@
 <li class="chapter" data-level="9.4" data-path="biasFairness.html"><a href="biasFairness.html#input"><i class="fa fa-check"></i><b>9.4</b> Input</a></li>
 <li class="chapter" data-level="9.5" data-path="biasFairness.html"><a href="biasFairness.html#resultados"><i class="fa fa-check"></i><b>9.5</b> Resultados</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="frontend.html"><a href="frontend.html"><i class="fa fa-check"></i><b>10</b> Solución Propuesta: Producto Final</a></li>
+<li class="chapter" data-level="10" data-path="frontend.html"><a href="frontend.html"><i class="fa fa-check"></i><b>10</b> Solución Propuesta: Producto Final</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="frontend.html"><a href="frontend.html#backend"><i class="fa fa-check"></i><b>10.1</b> Backend</a></li>
+<li class="chapter" data-level="10.2" data-path="frontend.html"><a href="frontend.html#frontend-1"><i class="fa fa-check"></i><b>10.2</b> Frontend</a></li>
+</ul></li>
 <li class="chapter" data-level="11" data-path="orquestacion.html"><a href="orquestacion.html"><i class="fa fa-check"></i><b>11</b> Orquestación del flujo de trabajo</a>
 <ul>
 <li class="chapter" data-level="11.1" data-path="orquestacion.html"><a href="orquestacion.html#pipeline-principal"><i class="fa fa-check"></i><b>11.1</b> Pipeline principal</a>
@@ -170,6 +166,7 @@
 <ul>
 <li class="chapter" data-level="11.2.1" data-path="orquestacion.html"><a href="orquestacion.html#dag-asociado-1"><i class="fa fa-check"></i><b>11.2.1</b> DAG Asociado</a></li>
 </ul></li>
+<li class="chapter" data-level="11.3" data-path="orquestacion.html"><a href="orquestacion.html#pipeline-completo"><i class="fa fa-check"></i><b>11.3</b> Pipeline Completo</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="conclusiones.html"><a href="conclusiones.html"><i class="fa fa-check"></i><b>12</b> Conclusiones</a></li>
 <li class="chapter" data-level="13" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i><b>13</b> Referencias</a></li>
@@ -195,12 +192,31 @@
             <section class="normal" id="section-">
 <div id="frontend" class="section level1" number="10">
 <h1><span class="header-section-number">Capítulo 10</span> Solución Propuesta: Producto Final</h1>
+<div id="backend" class="section level2" number="10.1">
+<h2><span class="header-section-number">10.1</span> Backend</h2>
+<p>Con la ayuda de <em>flask, psycopg2 y dynaconf</em> construimos una api con dos <em>endpoints</em>:i) endpoint_model_info; ii) endpoint_prediction.</p>
+<p><strong>Endpoints en la API-NYC311</strong></p>
+<div align="center">
+<p><image width="600" height="300" src="./images/api.jpeg"></p>
+</div>
+<p>Para ejecutar la api, en <em>aws</em> habilitamos el ‘inbound/outbound’ el puerto <span class="math inline">\(5,000\)</span>, para la levatar la api, basta con ejecutar en la línea de comandos lo siguiente:</p>
+<pre><code>python3 api.py
+</code></pre>
+<p>El script en mención se encuentra en el siguiente sitio: <a href="https://github.com/dapivei/data-product-architecture-final-project/blob/master/scripts/API/api.py">api.py</a>.</p>
+<strong>Consulta en la API_NYC311</strong>
+<div align="center">
+<p><image width="600" height="500" src="./images/api_consulta_i.jpeg"></p>
+</div>
+</div>
+<div id="frontend-1" class="section level2" number="10.2">
+<h2><span class="header-section-number">10.2</span> Frontend</h2>
 <p><strong>Gráfica 5.Portal-Web “NYC311 Service Request Engagement”</strong></p>
 <div align="center">
 <p><image width="350" height="250" src="./images/web_service_proposal.png"></p>
 </div>
 <p>El producto de datos va a ser un dashboard que genere predicciones diarias de los <em>service request recibidos</em> una vez se realice la ingesta de datos. El dashboard va a permitir filtrar las predicciones por fecha de creación, días para completar, distrito, agencia, tipo de <em>service request</em>.</p>
 
+</div>
 </div>
             </section>
 

@@ -1,6 +1,35 @@
 # Solución Propuesta: Producto Final {#frontend}
 
+## Backend
 
+Con la ayuda de _flask, psycopg2 y dynaconf_ construimos una api con dos *endpoints*:i) endpoint_model_info; ii) endpoint_prediction.
+
+**Endpoints en la API-NYC311**
+
+<div align="center">
+
+<image width="600" height="300" src="./images/api.jpeg">
+
+</div>
+
+Para ejecutar la api, en _aws_ habilitamos el 'inbound/outbound' el puerto $5,000$, para la levatar la api, basta con ejecutar en la línea de comandos lo siguiente:
+
+
+```
+python3 api.py
+
+```
+El script en mención se encuentra en el siguiente sitio: [api.py](https://github.com/dapivei/data-product-architecture-final-project/blob/master/scripts/API/api.py).
+
+
+**Consulta en la API_NYC311**
+<div align="center">
+
+<image width="600" height="500" src="./images/api_consulta_i.jpeg">
+
+</div>
+
+## Frontend
 
 **Gráfica 5.Portal-Web "NYC311 Service Request Engagement"**
 

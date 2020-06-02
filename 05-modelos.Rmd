@@ -40,7 +40,7 @@ Estas variables fueron empleadas en el modelado.
 
 ## Tuneo de hiperparámetros
 
-Pendiente.
+En un futuro nos gustaría mejorar nuestras predicciones con la implementación de algún *gridsearch* o *magic loop*.
 
 ## Selección de Modelos
 

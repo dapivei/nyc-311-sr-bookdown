@@ -38,7 +38,22 @@ Cada nodo representa una tarea (*task*) que debe ser corrida. Los *task* en verd
 
 
 
-## Pipeline de Unit Testing
 
-### DAG Asociado
+## Pipeline ML-Preprocessing- MetaTestPredictions
+
+<div align="center">
+
+<image width="600" height="600" src="./images/iv_pipeline.png">
+
+
+<image width="600" height="300" src="./images/i_pipeline.png">
+
+<image width="600" height="300" src="./images/ii_pipeline.png">
+
+<image width="600" height="300" src="./images/iii_pipeline.png">
+
+<image width="600" height="300" src="./images/iv_pipeline.png">
+
+
+</div>
 </div>
