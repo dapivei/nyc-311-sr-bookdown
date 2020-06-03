@@ -33,7 +33,7 @@ Cambiaremos los valores de la columna borough para facilitar la interpretación 
 
 </div>
 
-En la gráfica anterior, notamos que hay una diferencia en la distribución de las predicciones por distrito. Por ejemplo, una gran mayoría de las predicciones de _Bronx_ no están por encima de la media, mientras que alrededor de la mitad de las predicciones de Manhattan y Queens, predicen demandan de 
+En la gráfica anterior, notamos que hay una diferencia en la distribución de las predicciones por distrito. Por ejemplo, una proporción muy pequeña de las predicciones de _Bronx_  (en comparación con las predicciones totales de Bronx), están por encima de la media; al contrario, para otros distritos como Queens o Manhattan, una proporción considerable de sus predicciones totales predicen 1: predicciones por encima de la media.
 
 ## Grupo de referencia
 
@@ -44,7 +44,6 @@ El grupo de referencia es Brooklyn, mismo que fue escogido por tener el mayor ta
 
 Probamos las siguientes métricas de equidad y sesgo:
 
-* Proportional Parity: auditamos si cada distrito está representado proporcionalmente a su representación en la población en general.
 * False Positive Parity: auditamos si el modelo genera, proporcionalmente, la misma cantidad de errores falsos positivos.
 * False Negative Parity: auditamos si el modelo genera, proporcionalmente, la misma cantidad de errores falsos negativos.
 
@@ -80,8 +79,15 @@ A manera de ejemplo, a continuación presentamos los resultados de uno de los mo
 </div>
 
 
+Vemos que los distritos _D, E, F_  tienen false positive rates (fpr) de  13%, 18% y 11% respectivamente, mientras que los distritos _A, B, C_ tiene fpr de 0% o 3%. Esto significa que los distritos _D, E, F_ tienen más probabilidad de que sus predicciones sean falsamente etiquetadas por encima del promedio, en comparación con los otros distritos. Por otro lado, los false ommision rates (for)- entendidos como las predicciones que deberían ser etiquetadas por encima del promedio y no lo son-son muchísimo más similares entre los distritos _D, E, F_.
 
- **Diferencias en predicciones por distrito**
+Finalmente, con la gráfica de False Negative Rate (fnr), observamos que las predicciones asociadas con el distrito D, con mayor frecuencia genera prediciones incorrectas (falsas negativas.). Por la coloración oscura de barra "D", identificamos que Queens es una de las poblaciones más grandes dentro del dataset.
+
+
+ **Diferencias en predicciones por paridad entre distrito**
+ 
+A continuación, mostramos otras pruebas de bias y fairness que no fueron consideradas al momento de escoger nuestro mejor modelo, sin embargo, nos interesaría explorar y analizar a mayor profundidad estas métricas en un futuro próximo.
+
 <div align="center">
 
 <image width="613" height="400" src="./images/disparity_metrics_i.png">
@@ -91,15 +97,13 @@ A manera de ejemplo, a continuación presentamos los resultados de uno de los mo
 
 
 
-
- **Diferencias en predicciones por distrito**
 <div align="center">
 
 <image width="700" height="400" src="./images/disparity_metrics_iii.png">
 
 </div>
 
- **Diferencias en predicciones por distrito**
+
 <div align="center">
 
 <image width="600" height="400" src="./images/disparity_metrics_iv.png">

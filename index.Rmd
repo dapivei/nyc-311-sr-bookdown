@@ -15,8 +15,11 @@ description: "Descripción de la implementación de un producto de datos: predic
 ---
 <div align="justify">
 
+
+
 # Introducción
 
+-- <cite> Expresamos nuestro agradecimiento con la profesora Liliana Millán, quién nos asesoró durante la eloraboración del presente proyecto.</cite> 
 
 Existe una brecha, aparentemente "infranqueable" entre el Estado y la ciudadanía: los ciudadanos carecen de herramientas y canales para monitorear, participar y colaborar de manera directa en el quehacer público. 
 Atendiendo la problemática antes descrita, el gobierno de Nueva York, implementó el servicio de quejas y peticiones *NYC311*, disponible las 24 horas del día, los 7 días de la semana, los 365 días del año; cuya misión principal, según su portal web [*NYC311*](https://portal.311.nyc.gov/about-nyc-311/),es:

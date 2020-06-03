@@ -3,11 +3,22 @@
 
 Sitios de internet consultados:
 
+
+
 + [Dssg/aequitas](https://github.com/dssg/aequitas)
 
 + [The bias and Fairness Audit Toolkit for Machine Learning](https://dssg.github.io/aequitas/)
 
 + [Aequitas](http://www.datasciencepublicpolicy.org/projects/aequitas/)
+
+
++ [Bokeh](https://bokeh.org/)
+
++ [FoxyProxy](https://getfoxyproxy.org/)
+
++ [Apache Zeppelin](https://zeppelin.apache.org/)
+
++ [Luigi](https://luigi.readthedocs.io/en/stable/)
 
 
 

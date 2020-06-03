@@ -155,11 +155,7 @@
 <ul>
 <li class="chapter" data-level="11.1.1" data-path="orquestacion.html"><a href="orquestacion.html#dag-asociado"><i class="fa fa-check"></i><b>11.1.1</b> DAG Asociado</a></li>
 </ul></li>
-<li class="chapter" data-level="11.2" data-path="orquestacion.html"><a href="orquestacion.html#pipeline-de-unit-testing"><i class="fa fa-check"></i><b>11.2</b> Pipeline de Unit Testing</a>
-<ul>
-<li class="chapter" data-level="11.2.1" data-path="orquestacion.html"><a href="orquestacion.html#dag-asociado-1"><i class="fa fa-check"></i><b>11.2.1</b> DAG Asociado</a></li>
-</ul></li>
-<li class="chapter" data-level="11.3" data-path="orquestacion.html"><a href="orquestacion.html#pipeline-completo"><i class="fa fa-check"></i><b>11.3</b> Pipeline Completo</a></li>
+<li class="chapter" data-level="11.2" data-path="orquestacion.html"><a href="orquestacion.html#pipeline-ml-preprocessing--metatestpredictions"><i class="fa fa-check"></i><b>11.2</b> Pipeline ML-Preprocessing- MetaTestPredictions</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="conclusiones.html"><a href="conclusiones.html"><i class="fa fa-check"></i><b>12</b> Conclusiones</a></li>
 <li class="chapter" data-level="13" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i><b>13</b> Referencias</a></li>
@@ -208,7 +204,7 @@
 <div align="center">
 <p><image width="300" height="250" src="./images/score_borough.png"></p>
 </div>
-<p>En la gráfica anterior, notamos que hay una diferencia en la distribución de las predicciones por distrito. Por ejemplo, una gran mayoría de las predicciones de <em>Bronx</em> no están por encima de la media, mientras que alrededor de la mitad de las predicciones de Manhattan y Queens, predicen demandan de</p>
+<p>En la gráfica anterior, notamos que hay una diferencia en la distribución de las predicciones por distrito. Por ejemplo, una proporción muy pequeña de las predicciones de <em>Bronx</em> (en comparación con las predicciones totales de Bronx), están por encima de la media; al contrario, para otros distritos como Queens o Manhattan, una proporción considerable de sus predicciones totales predicen 1: predicciones por encima de la media.</p>
 </div>
 <div id="grupo-de-referencia" class="section level2" number="9.2">
 <h2><span class="header-section-number">9.2</span> Grupo de referencia</h2>
@@ -218,7 +214,6 @@
 <h2><span class="header-section-number">9.3</span> Métricas de equidad y sesgo</h2>
 <p>Probamos las siguientes métricas de equidad y sesgo:</p>
 <ul>
-<li>Proportional Parity: auditamos si cada distrito está representado proporcionalmente a su representación en la población en general.</li>
 <li>False Positive Parity: auditamos si el modelo genera, proporcionalmente, la misma cantidad de errores falsos positivos.</li>
 <li>False Negative Parity: auditamos si el modelo genera, proporcionalmente, la misma cantidad de errores falsos negativos.</li>
 </ul>
@@ -268,16 +263,17 @@
 <div align="center">
 <p><image width="700" height="400" src="./images/bias_metrics.png"></p>
 </div>
-<strong>Diferencias en predicciones por distrito</strong>
+<p>Vemos que los distritos <em>D, E, F</em> tienen false positive rates (fpr) de 13%, 18% y 11% respectivamente, mientras que los distritos <em>A, B, C</em> tiene fpr de 0% o 3%. Esto significa que los distritos <em>D, E, F</em> tienen más probabilidad de que sus predicciones sean falsamente etiquetadas por encima del promedio, en comparación con los otros distritos. Por otro lado, los false ommision rates (for)- entendidos como las predicciones que deberían ser etiquetadas por encima del promedio y no lo son-son muchísimo más similares entre los distritos <em>D, E, F</em>.</p>
+<p>Finalmente, con la gráfica de False Negative Rate (fnr), observamos que las predicciones asociadas con el distrito D, con mayor frecuencia genera prediciones incorrectas (falsas negativas.). Por la coloración oscura de barra “D”, identificamos que Queens es una de las poblaciones más grandes dentro del dataset.</p>
+<p><strong>Diferencias en predicciones por paridad entre distrito</strong></p>
+<p>A continuación, mostramos otras pruebas de bias y fairness que no fueron consideradas al momento de escoger nuestro mejor modelo, sin embargo, nos interesaría explorar y analizar a mayor profundidad estas métricas en un futuro próximo.</p>
 <div align="center">
 <p><image width="613" height="400" src="./images/disparity_metrics_i.png">
 <image width="600" height="190" src="./images/disparity_metrics_ii.png"></p>
 </div>
-<strong>Diferencias en predicciones por distrito</strong>
 <div align="center">
 <p><image width="700" height="400" src="./images/disparity_metrics_iii.png"></p>
 </div>
-<strong>Diferencias en predicciones por distrito</strong>
 <div align="center">
 <p><image width="600" height="400" src="./images/disparity_metrics_iv.png">
 <image width="600" height="190" src="./images/disparity_metrics_v.png"></p>
