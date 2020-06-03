@@ -204,7 +204,7 @@
 <div align="center">
 <p><image width="300" height="250" src="./images/score_borough.png"></p>
 </div>
-<p>En la gráfica anterior, notamos que hay una diferencia en la distribución de las predicciones por distrito. Por ejemplo, una proporción muy pequeña de las predicciones de <em>Bronx</em> (en comparación con las predicciones totales de Bronx), están por encima de la media; al contrario, para otros distritos como Queens o Manhattan, una proporción considerable de sus predicciones totales predicen 1: predicciones por encima de la media.</p>
+<p>En la gráfica anterior, notamos que hay una diferencia en la distribución de las predicciones por distrito. Por ejemplo, una proporción muy pequeña de las predicciones de <em>Bronx</em> (en comparación con las predicciones totales de Bronx), están por encima de la media; al contrario, para otros distritos como Queens o Manhattan, una proporción considerable de sus predicciones totales predicen 1: predicciones por encima de la</p>
 </div>
 <div id="grupo-de-referencia" class="section level2" number="9.2">
 <h2><span class="header-section-number">9.2</span> Grupo de referencia</h2>
@@ -214,8 +214,8 @@
 <h2><span class="header-section-number">9.3</span> Métricas de equidad y sesgo</h2>
 <p>Probamos las siguientes métricas de equidad y sesgo:</p>
 <ul>
-<li>False Positive Parity: auditamos si el modelo genera, proporcionalmente, la misma cantidad de errores falsos positivos.</li>
-<li>False Negative Parity: auditamos si el modelo genera, proporcionalmente, la misma cantidad de errores falsos negativos.</li>
+<li>False Positive Rate</li>
+<li>False Negative Rate</li>
 </ul>
 </div>
 <div id="input" class="section level2" number="9.4">
@@ -261,6 +261,7 @@
 </blockquote>
 <strong>Diferencias en predicciones por distrito</strong>
 <div align="center">
+<p><image width="480" height="250" src="./images/table_metrics.png"></p>
 <p><image width="700" height="400" src="./images/bias_metrics.png"></p>
 </div>
 <p>Vemos que los distritos <em>D, E, F</em> tienen false positive rates (fpr) de 13%, 18% y 11% respectivamente, mientras que los distritos <em>A, B, C</em> tiene fpr de 0% o 3%. Esto significa que los distritos <em>D, E, F</em> tienen más probabilidad de que sus predicciones sean falsamente etiquetadas por encima del promedio, en comparación con los otros distritos. Por otro lado, los false ommision rates (for)- entendidos como las predicciones que deberían ser etiquetadas por encima del promedio y no lo son-son muchísimo más similares entre los distritos <em>D, E, F</em>.</p>

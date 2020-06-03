@@ -33,7 +33,7 @@ Cambiaremos los valores de la columna borough para facilitar la interpretación 
 
 </div>
 
-En la gráfica anterior, notamos que hay una diferencia en la distribución de las predicciones por distrito. Por ejemplo, una proporción muy pequeña de las predicciones de _Bronx_  (en comparación con las predicciones totales de Bronx), están por encima de la media; al contrario, para otros distritos como Queens o Manhattan, una proporción considerable de sus predicciones totales predicen 1: predicciones por encima de la media.
+En la gráfica anterior, notamos que hay una diferencia en la distribución de las predicciones por distrito. Por ejemplo, una proporción muy pequeña de las predicciones de _Bronx_  (en comparación con las predicciones totales de Bronx), están por encima de la media; al contrario, para otros distritos como Queens o Manhattan, una proporción considerable de sus predicciones totales predicen 1: predicciones por encima de la
 
 ## Grupo de referencia
 
@@ -44,8 +44,8 @@ El grupo de referencia es Brooklyn, mismo que fue escogido por tener el mayor ta
 
 Probamos las siguientes métricas de equidad y sesgo:
 
-* False Positive Parity: auditamos si el modelo genera, proporcionalmente, la misma cantidad de errores falsos positivos.
-* False Negative Parity: auditamos si el modelo genera, proporcionalmente, la misma cantidad de errores falsos negativos.
+* False Positive Rate
+* False Negative Rate
 
 ## Input
 
@@ -73,6 +73,9 @@ A manera de ejemplo, a continuación presentamos los resultados de uno de los mo
 
  **Diferencias en predicciones por distrito**
 <div align="center">
+
+
+<image width="480" height="250" src="./images/table_metrics.png">
 
 <image width="700" height="400" src="./images/bias_metrics.png">
 
